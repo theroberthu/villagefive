@@ -1,0 +1,221 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Newsletter | VillageFive Disaster Documentaries"
+  description="Get weekly disaster stories, behind-the-scenes content, and early access to new VillageFive videos delivered straight to your inbox."
+>
+  <!-- Hero -->
+  <section class="hero corner-brackets">
+    <div class="container">
+      <div class="hero-eyebrow">Newsletter</div>
+      <h1 class="hero-title">DISASTER STORIES<br/>IN YOUR <em>INBOX</em></h1>
+      <p class="hero-sub">
+        A weekly email with forgotten disasters, behind-the-scenes content, and stories that never made it to video. Free, always.
+      </p>
+    </div>
+  </section>
+
+  <!-- Signup Section -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="nl-signup-block corner-brackets">
+        <h2 class="nl-signup-title">Subscribe Now</h2>
+        <p class="nl-signup-desc">
+          Join thousands of disaster history readers. One email per week, no spam, unsubscribe anytime.
+        </p>
+        <form class="newsletter-form" action="https://app.beehiiv.com/subscribe" method="post">
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            aria-label="Email address"
+          />
+          <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Get -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-header">
+        <h2>What You'll Get</h2>
+        <p>Every week in your inbox</p>
+      </div>
+      <div class="nl-benefits">
+        <div class="nl-benefit-card">
+          <div class="nl-benefit-number">01</div>
+          <div class="nl-benefit-label">Forgotten Disaster Stories</div>
+          <p>Deep dives into disasters most people have never heard of. The events, the people, and the lessons that were lost to time.</p>
+        </div>
+        <div class="nl-benefit-card">
+          <div class="nl-benefit-number">02</div>
+          <div class="nl-benefit-label">Behind the Scenes</div>
+          <p>How VillageFive videos get made. Research rabbit holes, cut footage notes, and the stories behind the stories.</p>
+        </div>
+        <div class="nl-benefit-card">
+          <div class="nl-benefit-number">03</div>
+          <div class="nl-benefit-label">Early Access</div>
+          <p>Subscribers get notified before anyone else when a new video drops. Plus exclusive content that only lives in the newsletter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="nl-bottom-cta">
+        <h2 class="nl-bottom-title">Ready?</h2>
+        <p class="nl-bottom-desc">
+          No spam. No fluff. Just disaster stories that matter, delivered weekly.
+        </p>
+        <form class="newsletter-form" action="https://app.beehiiv.com/subscribe" method="post">
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            aria-label="Email address"
+          />
+          <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ── Signup Block ──────────────────────────────────────────── */
+  .nl-signup-block {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-16) var(--space-8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nl-signup-block::after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232,66,10,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .nl-signup-title {
+    font-family: var(--font-display);
+    font-size: var(--type-2xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .nl-signup-desc {
+    font-size: var(--type-md);
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto var(--space-8);
+    line-height: var(--lh-relaxed);
+    position: relative;
+    z-index: 1;
+  }
+
+  .nl-signup-block .newsletter-form {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Benefits Grid ────────────────────────────────────────── */
+  .nl-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .nl-benefit-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    transition: all var(--dur-normal) var(--ease-out);
+  }
+
+  .nl-benefit-card:hover {
+    border-color: var(--border-default);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nl-benefit-number {
+    font-family: var(--font-display);
+    font-size: var(--type-2xl);
+    color: var(--ember-400);
+    line-height: 1;
+    margin-bottom: var(--space-4);
+  }
+
+  .nl-benefit-label {
+    font-family: var(--font-condensed);
+    font-size: var(--type-md);
+    font-weight: 700;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .nl-benefit-card p {
+    font-size: var(--type-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+  }
+
+  /* ── Bottom CTA ───────────────────────────────────────────── */
+  .nl-bottom-cta {
+    text-align: center;
+    padding: var(--space-12) 0;
+  }
+
+  .nl-bottom-title {
+    font-family: var(--font-display);
+    font-size: var(--type-3xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-3);
+  }
+
+  .nl-bottom-desc {
+    font-size: var(--type-md);
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto var(--space-8);
+    line-height: var(--lh-relaxed);
+  }
+
+  /* ── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .nl-benefits {
+      grid-template-columns: 1fr;
+    }
+
+    .nl-signup-block {
+      padding: var(--space-10) var(--space-6);
+    }
+
+    .newsletter-form {
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,0 +1,202 @@
+---
+import Base from '../layouts/Base.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+---
+
+<Base
+  title="About VillageFive | Disaster Documentaries"
+  description="VillageFive tells the stories of forgotten disasters, survivor accounts, and the catastrophic events that changed history. Learn about the channel and its mission."
+>
+  <!-- Hero -->
+  <section class="hero corner-brackets">
+    <div class="container">
+      <div class="hero-eyebrow">About</div>
+      <h1 class="hero-title">THE STORIES<br/>NOBODY <em>TELLS</em></h1>
+      <p class="hero-sub">
+        VillageFive is a YouTube documentary channel dedicated to uncovering forgotten disasters, survivor stories, and the catastrophic events that changed history.
+      </p>
+    </div>
+  </section>
+
+  <!-- Channel Story -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-block">
+          <div class="section-header">
+            <h2>Why Forgotten Disasters?</h2>
+            <p>The stories behind the channel</p>
+          </div>
+          <div class="prose">
+            <p>
+              Thousands of people can die in a disaster, and within a generation, the world forgets. Entire towns wiped off the map. Industrial failures that killed hundreds of workers. Floods, fires, and collapses that reshaped how we build, regulate, and respond to crisis.
+            </p>
+            <p>
+              VillageFive exists to bring those stories back. Not as dry history lessons, but as gripping, cinematic documentaries that put you in the middle of the chaos. Every video is researched, scripted, and produced to make you feel the weight of what happened.
+            </p>
+            <p>
+              Because these stories deserve to be remembered. And the lessons they carry are still relevant today.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-block">
+          <div class="section-header">
+            <h2>What We Cover</h2>
+            <p>Content you can expect</p>
+          </div>
+          <div class="about-formats">
+            <div class="about-format-card">
+              <div class="about-format-label">Top 5 Lists</div>
+              <p>Curated lists of disasters organized by theme. Forgotten collapses, deadliest industrial accidents, worst engineering failures, and more.</p>
+            </div>
+            <div class="about-format-card">
+              <div class="about-format-label">Deep Dives</div>
+              <p>Long-form documentaries that go deep into a single disaster. The full timeline, the people involved, and the aftermath that followed.</p>
+            </div>
+            <div class="about-format-card">
+              <div class="about-format-label">Shorts</div>
+              <p>Quick, punchy disaster stories in under 60 seconds. Perfect for discovering a new event you have never heard of before.</p>
+            </div>
+            <div class="about-format-card">
+              <div class="about-format-label">Blog Articles</div>
+              <p>Written companions to our videos, plus original articles covering disasters that work better on the page than on screen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-block">
+          <div class="section-header">
+            <h2>Behind the Channel</h2>
+            <p>Who makes this</p>
+          </div>
+          <div class="prose">
+            <p>
+              VillageFive is created by Robert Hu. Every video is independently researched, written, and produced. The goal is simple: make disaster history as compelling to watch as it is important to know.
+            </p>
+            <p>
+              New documentaries drop every week. Subscribe on YouTube so you never miss one.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="about-cta corner-brackets">
+        <h2 class="about-cta-title">Watch on YouTube</h2>
+        <p class="about-cta-desc">
+          New disaster documentaries every week. Subscribe so you never miss a story.
+        </p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a
+            class="btn btn-primary btn-xl"
+            href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Subscribe on YouTube
+          </a>
+          <a
+            class="btn btn-secondary btn-xl"
+            href="/"
+          >
+            Watch Latest Video
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section-wrap">
+    <div class="container">
+      <NewsletterForm />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    max-width: 800px;
+  }
+
+  .about-block .prose {
+    margin-bottom: 0;
+  }
+
+  .about-formats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .about-format-card {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--dur-normal) var(--ease-out);
+  }
+
+  .about-format-card:hover {
+    border-color: var(--border-default);
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-format-label {
+    font-family: var(--font-condensed);
+    font-size: var(--type-sm);
+    font-weight: 700;
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    color: var(--ember-400);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-format-card p {
+    font-size: var(--type-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+  }
+
+  .about-cta {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-16) var(--space-8);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .about-cta-title {
+    font-family: var(--font-display);
+    font-size: var(--type-2xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-cta-desc {
+    font-size: var(--type-md);
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto var(--space-8);
+    line-height: var(--lh-relaxed);
+  }
+
+  @media (max-width: 768px) {
+    .about-formats {
+      grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+      padding: var(--space-10) var(--space-6);
+    }
+  }
+</style>
