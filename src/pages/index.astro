@@ -40,6 +40,24 @@ const recentVideos = videos.slice(1, 7);
     </div>
   </section>
 
+  <!-- Why These Stories Matter -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="why-matter">
+        <h2 class="why-matter-heading">Why These Stories Matter</h2>
+        <p>
+          Thousands of disasters have shaped the world we live in today. Earthquakes that leveled entire cities. Floods that killed hundreds of thousands. Explosions that wiped towns off the map. Most of them never made it into a textbook.
+        </p>
+        <p>
+          VillageFive covers the disasters that history forgot: the ones too devastating to ignore, but somehow overlooked. Every week, a new documentary brings one of these stories back to light through research, real accounts, and the details that got buried over time.
+        </p>
+        <p>
+          From the 1889 Johnstown Flood to the 2026 Ice Storm, these aren't just tragedies. They're warnings.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Latest Video -->
   <section class="section-wrap" id="latest-video">
     <div class="container">
@@ -78,3 +96,28 @@ const recentVideos = videos.slice(1, 7);
     </div>
   </section>
 </Base>
+
+<style>
+  .why-matter {
+    max-width: 700px;
+  }
+
+  .why-matter-heading {
+    font-family: var(--font-display);
+    font-size: var(--type-2xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-6);
+  }
+
+  .why-matter p {
+    font-family: var(--font-body);
+    font-size: var(--type-base);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-5);
+  }
+
+  .why-matter p:last-child {
+    margin-bottom: 0;
+  }
+</style>
