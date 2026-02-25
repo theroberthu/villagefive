@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+function estimateReadTime(body: string): number {
+  const words = body.split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 230));
+}
+
+function cleanSlug(id: string): string {
+  return id.replace(/\.md$/, '');
+}
+---
+
+<Base
+  title="Blog | VillageFive"
+  description="Articles about forgotten disasters, survivor stories, and the catastrophic events that shaped history. Deep dives from the VillageFive archives."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow">The Archives</div>
+      <h1 class="hero-title">Blog</h1>
+      <p class="hero-sub">
+        Deep dives into forgotten disasters, survivor stories, and the catastrophic events that changed history.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-wrap">
+    <div class="container">
+      {posts.length === 0 ? (
+        <div class="blog-empty">
+          <p>No articles yet. Check back soon.</p>
+        </div>
+      ) : (
+        <div class="blog-grid">
+          {posts.map(post => (
+            <BlogCard
+              slug={cleanSlug(post.id)}
+              title={post.data.title}
+              description={post.data.description}
+              publishDate={post.data.publishDate}
+              tags={post.data.tags}
+              featuredImage={post.data.featuredImage}
+              readTime={estimateReadTime(post.body || '')}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

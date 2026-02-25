@@ -1,0 +1,43 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  publishDate: Date;
+  tags?: string[];
+  featuredImage?: string;
+  readTime: number;
+}
+
+const { slug, title, description, publishDate, tags = [], featuredImage, readTime } = Astro.props;
+
+const formattedDate = publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<a href={`/blog/${slug}/`} class="blog-card card">
+  {featuredImage && (
+    <div class="blog-card-image">
+      <img src={featuredImage} alt={title} loading="lazy" />
+    </div>
+  )}
+  <div class="blog-card-body">
+    {tags.length > 0 && (
+      <div class="blog-card-tags">
+        {tags.slice(0, 3).map(tag => (
+          <span class="blog-card-tag">{tag}</span>
+        ))}
+      </div>
+    )}
+    <h3 class="blog-card-title">{title}</h3>
+    <p class="blog-card-excerpt">{description}</p>
+    <div class="blog-card-meta">
+      <span>{formattedDate}</span>
+      <span class="blog-card-meta-sep">&middot;</span>
+      <span>{readTime} min read</span>
+    </div>
+  </div>
+</a>

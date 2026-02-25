@@ -1,0 +1,160 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
+import AdSlot from '../components/AdSlot.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  tags?: string[];
+  youtubeVideoId?: string;
+  featuredImage?: string;
+  slug: string;
+  readTime: number;
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  tags = [],
+  youtubeVideoId,
+  featuredImage,
+  slug,
+  readTime,
+} = Astro.props;
+
+const formattedDate = publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const isoDate = publishDate.toISOString();
+const canonicalURL = new URL(`/blog/${slug}/`, Astro.site).href;
+const ogImage = featuredImage || '/images/og-default.jpg';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: description,
+  image: ogImage.startsWith('/') ? new URL(ogImage, Astro.site).href : ogImage,
+  datePublished: isoDate,
+  dateModified: isoDate,
+  author: {
+    '@type': 'Person',
+    name: 'VillageFive',
+    url: 'https://www.youtube.com/@villagefive',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'VillageFive',
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/images/og-default.jpg', Astro.site).href,
+    },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalURL,
+  },
+  keywords: tags.join(', '),
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | VillageFive</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={`${title} | VillageFive`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content={isoDate} />
+  {tags.map(tag => <meta property="article:tag" content={tag} />)}
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={`${title} | VillageFive`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body>
+  <Header />
+  <main>
+    <article class="blog-post">
+      <div class="container">
+        <div class="blog-post-layout">
+          <!-- Main content -->
+          <div class="blog-post-content">
+            <header class="blog-post-header">
+              {tags.length > 0 && (
+                <div class="blog-post-tags">
+                  {tags.map(tag => (
+                    <span class="badge badge-sm badge-ember">{tag}</span>
+                  ))}
+                </div>
+              )}
+              <h1 class="blog-post-title">{title}</h1>
+              <div class="blog-post-meta">
+                <time datetime={isoDate}>{formattedDate}</time>
+                <span class="blog-post-meta-sep">&middot;</span>
+                <span>{readTime} min read</span>
+              </div>
+            </header>
+
+            {youtubeVideoId && (
+              <div class="blog-post-video">
+                <YouTubeEmbed videoId={youtubeVideoId} title={title} />
+              </div>
+            )}
+
+            <div class="blog-post-body prose">
+              <slot />
+            </div>
+
+            <AdSlot type="ad" label="Ad Placement" />
+
+            <!-- Newsletter CTA -->
+            <div class="blog-post-newsletter">
+              <NewsletterForm />
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="blog-post-sidebar">
+            <div class="sidebar-sticky">
+              <AdSlot type="ad" label="Sidebar Ad" />
+              <AdSlot type="affiliate" label="Book Recommendation" />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</body>
+</html>
