@@ -13,7 +13,7 @@ interface Props {
 const {
   title,
   description,
-  ogImage = '/images/og-default.jpg',
+  ogImage = 'https://villagefive.com/images/villagefive_og_v3.png',
   canonicalURL = Astro.url.href,
 } = Astro.props;
 ---
@@ -46,7 +46,8 @@ const {
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="/images/favicon_v2.ico" />
+  <link rel="apple-touch-icon" href="/images/favicon_v2_512.png" />
 </head>
 <body>
   <Header />
