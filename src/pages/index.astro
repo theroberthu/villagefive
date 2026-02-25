@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
+import VideoCard from '../components/VideoCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import videos from '../data/videos.json';
+
+const latestVideo = videos[0];
+const recentVideos = videos.slice(1, 7);
+---
+
+<Base
+  title="VillageFive: Disaster Documentaries"
+  description="VillageFive is a YouTube channel focused on disaster documentaries. Forgotten disasters, survivor stories, and the events that changed history."
+>
+  <!-- Hero -->
+  <section class="hero corner-brackets">
+    <div class="container">
+      <div class="hero-eyebrow">Disaster Documentaries</div>
+      <h1 class="hero-title">VILLAGE<em>FIVE</em></h1>
+      <p class="hero-sub">
+        Forgotten disasters, survivor stories, and the catastrophic events that changed history. New documentaries every week.
+      </p>
+      <div class="hero-actions">
+        <a
+          class="btn btn-primary btn-xl"
+          href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Subscribe on YouTube
+        </a>
+        <a
+          class="btn btn-secondary btn-xl"
+          href="#latest-video"
+        >
+          Watch Latest
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Video -->
+  <section class="section-wrap" id="latest-video">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest Video</h2>
+        <p>Most recent upload</p>
+      </div>
+      <YouTubeEmbed videoId={latestVideo.id} title={latestVideo.title} />
+    </div>
+  </section>
+
+  <!-- Recent Videos -->
+  <section class="section-wrap">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recent Videos</h2>
+        <p>From the archive</p>
+      </div>
+      <div class="video-grid">
+        {recentVideos.map(video => (
+          <VideoCard
+            id={video.id}
+            title={video.title}
+            publishDate={video.publishDate}
+            thumbnail={video.thumbnail}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section-wrap">
+    <div class="container">
+      <NewsletterForm />
+    </div>
+  </section>
+</Base>

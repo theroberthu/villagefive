@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VillageFive — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VILLAGEFIVE DESIGN SYSTEM
+   Principal Designer: Apple Design Systems Team
+   Channel: Disaster Documentaries | youtube.com/@villagefive
+   ============================================================ */
+
+:root {
+  /* ── COLOR PALETTE ─────────────────────────────────────────
+     Inspired by: ash, ember, smoke, emergency broadcast static
+     Emotional register: gravitas, tension, documentary truth  */
+
+  /* Core Neutrals */
+  --ash-900:   #0D0D0D; /* Background / deepest base */
+  --ash-800:   #141414;
+  --ash-700:   #1C1C1C;
+  --ash-600:   #252525;
+  --ash-500:   #2F2F2F;
+  --ash-400:   #3D3D3D;
+  --ash-300:   #5A5A5A;
+  --ash-200:   #8A8A8A;
+  --ash-100:   #B8B8B8;
+  --ash-050:   #E4E4E4;
+  --ash-000:   #F5F5F0; /* Off-white — warmer than pure white */
+
+  /* Ember Accent (primary) */
+  --ember-600: #8B2500;
+  --ember-500: #C13000;
+  --ember-400: #E8420A; /* Primary CTA — 4.72:1 on #0D0D0D */
+  --ember-300: #FF6030;
+  --ember-200: #FF8A60;
+  --ember-100: #FFCAB4;
+
+  /* Signal (alert/warning) */
+  --signal-400: #D4A017; /* 5.1:1 on #0D0D0D */
+  --signal-300: #F0BB20;
+  --signal-100: #FFF0B3;
+
+  /* Static (UI utility) */
+  --static-400: #4A6FA5; /* 3.85:1 on #0D0D0D */
+  --static-300: #6B8FBF;
+  --static-100: #C5D5EB;
+
+  /* Surface tokens */
+  --surface-base:    var(--ash-900);
+  --surface-raised:  var(--ash-800);
+  --surface-overlay: var(--ash-700);
+  --surface-card:    var(--ash-600);
+  --surface-inset:   var(--ash-500);
+
+  /* Text tokens */
+  --text-primary:   var(--ash-000);    /* 18.4:1 on #0D0D0D ✓ AAA */
+  --text-secondary: var(--ash-100);    /* 11.2:1 ✓ AAA */
+  --text-tertiary:  var(--ash-200);    /*  6.8:1 ✓ AA  */
+  --text-disabled:  var(--ash-300);    /*  3.8:1 — large text only */
+  --text-inverse:   var(--ash-900);
+  --text-accent:    var(--ember-400);  /*  4.72:1 ✓ AA */
+  --text-signal:    var(--signal-400); /*  5.1:1 ✓ AA  */
+
+  /* Border tokens */
+  --border-subtle:  var(--ash-500);
+  --border-default: var(--ash-400);
+  --border-strong:  var(--ash-300);
+  --border-accent:  var(--ember-400);
+
+  /* ── 8px SPACING SYSTEM ────────────────────────────────────
+     Base unit: 8px | Scale: 0.5× 1× 1.5× 2× 3× 4× 5× 6× 8× 10× 12× */
+  --space-1:   4px;   /* 0.5 base */
+  --space-2:   8px;   /* 1 base   */
+  --space-3:  12px;   /* 1.5× */
+  --space-4:  16px;   /* 2×   */
+  --space-5:  20px;   /* 2.5× */
+  --space-6:  24px;   /* 3×   */
+  --space-8:  32px;   /* 4×   */
+  --space-10: 40px;   /* 5×   */
+  --space-12: 48px;   /* 6×   */
+  --space-16: 64px;   /* 8×   */
+  --space-20: 80px;   /* 10×  */
+  --space-24: 96px;   /* 12×  */
+  --space-32: 128px;  /* 16×  */
+
+  /* ── 9-WEIGHT TYPE SCALE ───────────────────────────────────
+     Fonts: Bebas Neue (display) | Barlow Condensed (label) | Barlow (body)
+     Scale built on Major Third (1.250) ratio from 14px base  */
+  --type-xs:   11px;  /* 11 — micro label  */
+  --type-sm:   13px;  /* 13 — caption      */
+  --type-base: 15px;  /* 15 — body base    */
+  --type-md:   18px;  /* 18 — body large   */
+  --type-lg:   22px;  /* 22 — subheading   */
+  --type-xl:   28px;  /* 28 — heading      */
+  --type-2xl:  36px;  /* 36 — title        */
+  --type-3xl:  52px;  /* 52 — display      */
+  --type-4xl:  80px;  /* 80 — hero         */
+
+  --font-display:   'Bebas Neue', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+  --font-body:      'Barlow', sans-serif;
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.25;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.7;
+
+  --ls-tight:   -0.03em;
+  --ls-normal:   0em;
+  --ls-wide:     0.05em;
+  --ls-widest:   0.12em;
+
+  /* ── RADIUS ───────────────────────────────────────────────  */
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-xl:  12px;
+  --radius-full: 9999px;
+
+  /* ── ELEVATION ────────────────────────────────────────────  */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.6);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.7);
+  --shadow-lg:  0 12px 32px rgba(0,0,0,0.8);
+  --shadow-glow-ember: 0 0 20px rgba(232,66,10,0.3);
+  --shadow-glow-signal: 0 0 20px rgba(212,160,23,0.25);
+
+  /* ── MOTION ───────────────────────────────────────────────  */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-inout:  cubic-bezier(0.87, 0, 0.13, 1);
+  --dur-instant: 80ms;
+  --dur-fast:    150ms;
+  --dur-normal:  240ms;
+  --dur-slow:    400ms;
+}
+
+/* ── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  background: var(--ash-900);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── LAYOUT UTILITIES ─────────────────────────────────────── */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-6); }
+.section-wrap { padding: var(--space-20) 0; border-bottom: 1px solid var(--border-subtle); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.align-center { align-items: center; }
+.gap-2 { gap: var(--space-2); }
+.gap-4 { gap: var(--space-4); }
+.gap-6 { gap: var(--space-6); }
+
+/* ── SECTION HEADER ───────────────────────────────────────── */
+.ds-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.ds-section-header h2 {
+  font-family: var(--font-display);
+  font-size: var(--type-2xl);
+  letter-spacing: var(--ls-wide);
+  color: var(--text-primary);
+}
+.ds-section-header span {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.spec-label {
+  display: inline-block;
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-2);
+}
+.component-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+.component-label {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--ash-300);
+  margin-top: var(--space-2);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SECTION 0: SYSTEM HEADER
+   ────────────────────────────────────────────────────────────── */
+.system-header {
+  background: var(--ash-900);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--space-16) 0 var(--space-12);
+  position: relative;
+  overflow: hidden;
+}
+.system-header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(232,66,10,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.system-header-eyebrow {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 600;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--ember-400);
+  margin-bottom: var(--space-3);
+}
+.system-header-title {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8vw, var(--type-4xl));
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-4);
+}
+.system-header-title em {
+  font-style: normal;
+  color: var(--ember-400);
+}
+.system-header-sub {
+  font-size: var(--type-md);
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 640px;
+  line-height: var(--lh-relaxed);
+}
+.system-header-meta {
+  display: flex;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.meta-item-value {
+  font-family: var(--font-display);
+  font-size: var(--type-xl);
+  color: var(--text-primary);
+  letter-spacing: var(--ls-wide);
+}
+.meta-item-label {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SECTION 1: COLOR
+   ────────────────────────────────────────────────────────────── */
+.color-swatch-group {
+  margin-bottom: var(--space-8);
+}
+.color-swatch-group-label {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 600;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-3);
+}
+.color-row {
+  display: flex;
+  gap: 2px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.swatch {
+  flex: 1;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-2);
+  cursor: default;
+  transition: flex var(--dur-fast) var(--ease-out);
+  position: relative;
+}
+.swatch:hover { flex: 1.5; }
+.swatch-hex {
+  font-family: var(--font-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.swatch-name {
+  font-family: var(--font-condensed);
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  opacity: 0.7;
+}
+
+/* Token table */
+.token-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.token-table th {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.token-table td {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--type-sm);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+.token-table td:first-child {
+  font-family: var(--font-condensed);
+  color: var(--text-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.color-chip {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--space-2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.contrast-pass {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-condensed);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.pass-aaa { color: #4CAF50; }
+.pass-aa  { color: #8BC34A; }
+.pass-large { color: var(--signal-400); }
+
+/* ──────────────────────────────────────────────────────────────
+   SECTION 2: TYPOGRAPHY
+   ────────────────────────────────────────────────────────────── */
+.type-specimen-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-6);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.type-spec-meta {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.type-spec-name {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.type-spec-values {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  color: var(--ash-300);
+}
+.type-specimen-text { flex: 1; }
+
+/* ──────────────────────────────────────────────────────────────
+   SECTION 3: SPACING
+   ────────────────────────────────────────────────────────────── */
+.spacing-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.spacing-bar-wrap {
+  flex: 0 0 340px;
+}
+.spacing-bar {
+  background: linear-gradient(90deg, var(--ember-500), var(--ember-400));
+  height: 16px;
+  border-radius: 2px;
+}
+.spacing-info {
+  display: flex;
+  gap: var(--space-8);
+  font-family: var(--font-condensed);
+}
+.spacing-token { color: var(--text-accent); font-weight: 700; font-size: var(--type-sm); min-width: 80px; }
+.spacing-value { color: var(--text-secondary); font-size: var(--type-sm); min-width: 60px; }
+.spacing-usage { color: var(--text-tertiary); font-size: var(--type-sm); }
+
+/* ──────────────────────────────────────────────────────────────
+   COMPONENTS
+   ────────────────────────────────────────────────────────────── */
+
+/* BUTTONS ──────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--dur-fast) var(--ease-out);
+  position: relative;
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--ember-400);
+  outline-offset: 3px;
+}
+
+/* Sizes */
+.btn-sm  { height: 32px; padding: 0 var(--space-4); font-size: var(--type-xs); }
+.btn-md  { height: 40px; padding: 0 var(--space-6); font-size: var(--type-sm); }
+.btn-lg  { height: 48px; padding: 0 var(--space-8); font-size: var(--type-base); }
+.btn-xl  { height: 56px; padding: 0 var(--space-10); font-size: var(--type-md); }
+
+/* Variants */
+.btn-primary {
+  background: var(--ember-400);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  background: var(--ember-300);
+  box-shadow: var(--shadow-glow-ember);
+  transform: translateY(-1px);
+}
+.btn-primary:active { background: var(--ember-500); transform: translateY(0); box-shadow: none; }
+.btn-primary:disabled { background: var(--ash-400); color: var(--ash-300); cursor: not-allowed; box-shadow: none; transform: none; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+}
+.btn-secondary:hover {
+  border-color: var(--border-strong);
+  background: var(--ash-700);
+}
+.btn-secondary:active { background: var(--ash-600); }
+.btn-secondary:disabled { color: var(--text-disabled); border-color: var(--ash-500); cursor: not-allowed; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+.btn-ghost:hover { background: var(--ash-700); color: var(--text-primary); }
+.btn-ghost:active { background: var(--ash-600); }
+
+.btn-ember-ghost {
+  background: transparent;
+  color: var(--ember-400);
+  border: 1px solid var(--ember-600);
+}
+.btn-ember-ghost:hover {
+  background: rgba(232,66,10,0.1);
+  border-color: var(--ember-400);
+  box-shadow: var(--shadow-glow-ember);
+}
+.btn-ember-ghost:active { background: rgba(232,66,10,0.15); }
+
+.btn-signal {
+  background: var(--signal-400);
+  color: var(--ash-900);
+  font-weight: 800;
+}
+.btn-signal:hover { background: var(--signal-300); transform: translateY(-1px); box-shadow: var(--shadow-glow-signal); }
+
+.btn-destructive {
+  background: #8B0000;
+  color: #fff;
+  border: 1px solid #AA0000;
+}
+.btn-destructive:hover { background: #A80000; }
+
+/* Icon button */
+.btn-icon {
+  width: 40px; height: 40px; padding: 0;
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+}
+.btn-icon:hover { background: var(--ash-700); color: var(--text-primary); border-color: var(--border-strong); }
+
+/* Loading state */
+.btn-loading { pointer-events: none; opacity: 0.8; }
+.btn-loading::after {
+  content: '';
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-left: var(--space-2);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* BADGES ───────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.badge-sm { font-size: 10px; padding: 2px var(--space-2); }
+.badge-md { font-size: var(--type-xs); padding: var(--space-1) var(--space-3); }
+.badge-lg { font-size: var(--type-sm); padding: var(--space-2) var(--space-4); }
+
+.badge-ember    { background: rgba(232,66,10,0.18); color: var(--ember-300); border: 1px solid rgba(232,66,10,0.3); }
+.badge-signal   { background: rgba(212,160,23,0.15); color: var(--signal-300); border: 1px solid rgba(212,160,23,0.25); }
+.badge-neutral  { background: var(--ash-600); color: var(--text-secondary); border: 1px solid var(--border-default); }
+.badge-live     { background: rgba(200,30,30,0.2); color: #FF5555; border: 1px solid rgba(200,30,30,0.3); animation: pulse-live 1.8s ease-in-out infinite; }
+.badge-dot::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 2px; }
+@keyframes pulse-live { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+/* CARDS ────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--dur-normal) var(--ease-out);
+}
+.card:hover {
+  border-color: var(--border-default);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Video Card */
+.video-card { cursor: pointer; }
+.video-card-thumb {
+  aspect-ratio: 16/9;
+  background: var(--ash-700);
+  position: relative;
+  overflow: hidden;
+}
+.video-card-thumb-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.video-card:hover .video-card-thumb-img { transform: scale(1.04); }
+.video-card-thumb-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--ash-700) 0%, var(--ash-600) 50%, var(--ash-700) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--type-4xl);
+  color: var(--ash-400);
+  letter-spacing: var(--ls-wide);
+}
+.video-card-duration {
+  position: absolute;
+  bottom: var(--space-2);
+  right: var(--space-2);
+  background: rgba(0,0,0,0.85);
+  color: var(--text-primary);
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0);
+  transition: background var(--dur-fast);
+}
+.video-card:hover .play-overlay { background: rgba(0,0,0,0.4); }
+.play-icon {
+  width: 48px; height: 48px;
+  background: var(--ember-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.video-card:hover .play-icon { opacity: 1; transform: scale(1); }
+.play-icon::after {
+  content: '';
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 3px;
+}
+.video-card-body { padding: var(--space-4); }
+.video-card-category {
+  font-family: var(--font-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--ember-400);
+  margin-bottom: var(--space-1);
+}
+.video-card-title {
+  font-family: var(--font-condensed);
+  font-size: var(--type-md);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+.video-card-meta {
+  font-size: var(--type-xs);
+  color: var(--text-tertiary);
+  font-family: var(--font-condensed);
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* Feature Card */
+.feature-card {
+  padding: var(--space-6);
+}
+.feature-card-icon {
+  width: 48px; height: 48px;
+  background: rgba(232,66,10,0.12);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  font-size: 22px;
+}
+.feature-card-title {
+  font-family: var(--font-display);
+  font-size: var(--type-xl);
+  letter-spacing: var(--ls-wide);
+  margin-bottom: var(--space-2);
+}
+.feature-card-desc {
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+/* Stat Card */
+.stat-card {
+  padding: var(--space-6);
+  text-align: left;
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: var(--type-3xl);
+  letter-spacing: var(--ls-wide);
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+.stat-number-accent { color: var(--ember-400); }
+.stat-label {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 500;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.stat-trend {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 600;
+  color: #4CAF50;
+  margin-top: var(--space-2);
+}
+
+/* Episode Card */
+.episode-card {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-4);
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.episode-card:hover {
+  border-color: var(--border-default);
+  background: var(--ash-500);
+}
+.episode-thumb {
+  flex: 0 0 120px;
+  aspect-ratio: 16/9;
+  background: var(--ash-700);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--ash-400);
+}
+.episode-info { flex: 1; }
+.episode-num {
+  font-family: var(--font-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--ember-400);
+}
+.episode-title {
+  font-family: var(--font-condensed);
+  font-size: var(--type-base);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  margin: 2px 0 var(--space-2);
+}
+.episode-meta { font-size: var(--type-xs); color: var(--text-tertiary); font-family: var(--font-condensed); }
+
+/* INPUTS ───────────────────────────────────────────────────── */
+.input-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.input-label {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.input {
+  background: var(--ash-700);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-base);
+  padding: 0 var(--space-4);
+  height: 44px;
+  width: 100%;
+  transition: all var(--dur-fast) var(--ease-out);
+  outline: none;
+}
+.input::placeholder { color: var(--ash-300); }
+.input:hover { border-color: var(--border-strong); }
+.input:focus { border-color: var(--ember-400); background: var(--ash-600); box-shadow: 0 0 0 3px rgba(232,66,10,0.15); }
+.input:disabled { background: var(--ash-800); color: var(--text-disabled); cursor: not-allowed; }
+.input-error { border-color: #E03030 !important; }
+.input-success { border-color: #4CAF50 !important; }
+.input-hint { font-size: var(--type-xs); color: var(--text-tertiary); }
+.input-hint-error { color: #E05050; }
+.input-hint-success { color: #4CAF50; }
+
+/* Search input */
+.search-wrap { position: relative; }
+.search-wrap .input { padding-left: 44px; }
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+  font-size: 16px;
+}
+
+/* Textarea */
+.textarea {
+  background: var(--ash-700);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-base);
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  transition: all var(--dur-fast) var(--ease-out);
+  outline: none;
+  line-height: var(--lh-normal);
+}
+.textarea:focus { border-color: var(--ember-400); background: var(--ash-600); box-shadow: 0 0 0 3px rgba(232,66,10,0.15); }
+
+/* Select */
+.select {
+  appearance: none;
+  background: var(--ash-700);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-condensed);
+  font-size: var(--type-base);
+  padding: 0 var(--space-10) 0 var(--space-4);
+  height: 44px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--dur-fast) var(--ease-out);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A5A5A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.select:focus { border-color: var(--ember-400); box-shadow: 0 0 0 3px rgba(232,66,10,0.15); }
+.select option { background: var(--ash-700); }
+
+/* TOGGLE / CHECKBOX / RADIO ─────────────────────────────── */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+.toggle {
+  position: relative;
+  width: 44px; height: 24px;
+  flex-shrink: 0;
+}
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--ash-500);
+  border-radius: var(--radius-full);
+  transition: background var(--dur-fast) var(--ease-out);
+  border: 1px solid var(--border-default);
+}
+.toggle input:checked ~ .toggle-track { background: var(--ember-500); border-color: var(--ember-400); }
+.toggle-thumb {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 16px; height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform var(--dur-fast) var(--ease-out);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.toggle input:checked ~ .toggle-track .toggle-thumb { transform: translateX(20px); }
+.toggle input:disabled ~ .toggle-track { opacity: 0.4; cursor: not-allowed; }
+.toggle-label { font-family: var(--font-condensed); font-size: var(--type-base); color: var(--text-secondary); }
+
+/* Checkbox */
+.checkbox-wrap { display: flex; align-items: center; gap: var(--space-3); cursor: pointer; }
+.checkbox {
+  width: 20px; height: 20px; flex-shrink: 0;
+  background: var(--ash-700);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.checkbox.checked { background: var(--ember-400); border-color: var(--ember-400); }
+.checkbox.checked::after {
+  content: '';
+  width: 5px; height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+.checkbox:hover { border-color: var(--ember-400); }
+.checkbox.indeterminate { background: var(--ember-400); border-color: var(--ember-400); }
+.checkbox.indeterminate::after {
+  content: ''; width: 10px; height: 2px;
+  background: #fff;
+  transform: none;
+  border: none;
+}
+.checkbox-label { font-family: var(--font-condensed); font-size: var(--type-base); color: var(--text-secondary); }
+
+/* NAVIGATION ───────────────────────────────────────────────── */
+.nav {
+  background: rgba(13,13,13,0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: var(--type-xl);
+  letter-spacing: var(--ls-widest);
+  color: var(--text-primary);
+}
+.nav-logo span { color: var(--ember-400); }
+.nav-links {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+}
+.nav-link {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+  border: 1px solid transparent;
+}
+.nav-link:hover { color: var(--text-primary); background: var(--ash-700); }
+.nav-link.active { color: var(--text-primary); border-color: var(--border-default); background: var(--ash-700); }
+.nav-link.active::before { content: ''; } /* no underline — we use border */
+
+/* Tab Nav */
+.tab-nav { display: flex; gap: 0; border-bottom: 1px solid var(--border-subtle); }
+.tab {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.tab:hover { color: var(--text-secondary); }
+.tab.active { color: var(--text-primary); border-bottom-color: var(--ember-400); }
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  color: var(--text-tertiary);
+}
+.breadcrumb-sep { color: var(--ash-400); font-size: 10px; }
+.breadcrumb-item:last-child { color: var(--text-secondary); }
+.breadcrumb-item:not(:last-child):hover { color: var(--text-secondary); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+/* PROGRESS / PLAYBACK ──────────────────────────────────────── */
+.progress-bar-wrap { position: relative; height: 4px; background: var(--ash-500); border-radius: var(--radius-full); cursor: pointer; }
+.progress-bar-wrap:hover { height: 6px; }
+.progress-fill { height: 100%; background: var(--ember-400); border-radius: var(--radius-full); position: relative; transition: height var(--dur-fast); }
+.progress-thumb {
+  position: absolute;
+  right: -6px; top: 50%;
+  transform: translateY(-50%);
+  width: 12px; height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity var(--dur-fast);
+}
+.progress-bar-wrap:hover .progress-thumb { opacity: 1; }
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, var(--ash-700) 25%, var(--ash-600) 50%, var(--ash-700) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: var(--radius-md);
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+.skeleton-text { height: 14px; width: 100%; }
+.skeleton-title { height: 20px; width: 70%; }
+.skeleton-thumb { aspect-ratio: 16/9; border-radius: var(--radius-lg); }
+.skeleton-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; }
+
+/* TOOLTIP ──────────────────────────────────────────────────── */
+.tooltip-wrap { position: relative; display: inline-flex; }
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ash-200);
+  color: var(--ash-900);
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-fast);
+}
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--ash-200);
+}
+.tooltip-wrap:hover .tooltip { opacity: 1; }
+
+/* MODAL ────────────────────────────────────────────────────── */
+.modal-backdrop {
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+}
+.modal {
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: var(--type-xl);
+  letter-spacing: var(--ls-wide);
+}
+.modal-close {
+  width: 32px; height: 32px;
+  background: var(--ash-600);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: all var(--dur-fast);
+}
+.modal-close:hover { background: var(--ash-500); color: var(--text-primary); }
+.modal-body { padding: var(--space-6); }
+.modal-footer {
+  display: flex; gap: var(--space-3); justify-content: flex-end;
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ALERT / NOTIFICATION ─────────────────────────────────────── */
+.alert {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  border-left: 3px solid;
+  font-size: var(--type-sm);
+  line-height: var(--lh-normal);
+}
+.alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.alert-content { flex: 1; }
+.alert-title { font-family: var(--font-condensed); font-weight: 700; letter-spacing: 0.03em; margin-bottom: 2px; }
+
+.alert-info    { background: rgba(74,111,165,0.12); border-color: var(--static-300); color: var(--static-100); }
+.alert-success { background: rgba(76,175,80,0.1); border-color: #4CAF50; color: #A5D6A7; }
+.alert-warning { background: rgba(212,160,23,0.1); border-color: var(--signal-400); color: var(--signal-100); }
+.alert-error   { background: rgba(224,48,48,0.12); border-color: #E03030; color: #FFCDD2; }
+
+/* Toast */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--ash-600);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-5);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--type-sm);
+  font-family: var(--font-condensed);
+  min-width: 280px;
+  max-width: 380px;
+}
+.toast-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.toast-dot-ember  { background: var(--ember-400); }
+.toast-dot-success{ background: #4CAF50; }
+.toast-dot-warn   { background: var(--signal-400); }
+
+/* AVATAR ───────────────────────────────────────────────────── */
+.avatar {
+  border-radius: 50%;
+  background: var(--ash-600);
+  border: 2px solid var(--border-default);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.avatar-sm  { width: 32px; height: 32px; font-size: 12px; }
+.avatar-md  { width: 40px; height: 40px; font-size: 15px; }
+.avatar-lg  { width: 56px; height: 56px; font-size: 20px; }
+.avatar-xl  { width: 80px; height: 80px; font-size: 28px; }
+.avatar-ember   { background: rgba(232,66,10,0.2); border-color: var(--ember-500); color: var(--ember-300); }
+.avatar-online::after {
+  content: '';
+  position: absolute;
+  bottom: 1px; right: 1px;
+  width: 10px; height: 10px;
+  background: #4CAF50;
+  border: 2px solid var(--ash-900);
+  border-radius: 50%;
+}
+.avatar-wrap { position: relative; display: inline-flex; }
+
+/* MENU ─────────────────────────────────────────────────────── */
+.menu {
+  background: var(--surface-overlay);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) 0;
+  min-width: 220px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-condensed);
+  font-size: var(--type-base);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--dur-instant) var(--ease-out);
+}
+.menu-item:hover { background: var(--ash-600); color: var(--text-primary); }
+.menu-item.active { color: var(--ember-400); background: rgba(232,66,10,0.08); }
+.menu-item.destructive { color: #E05050; }
+.menu-item.destructive:hover { background: rgba(224,48,48,0.1); }
+.menu-item-icon { width: 18px; text-align: center; font-size: 14px; opacity: 0.7; }
+.menu-sep { height: 1px; background: var(--border-subtle); margin: var(--space-2) 0; }
+.menu-section-label {
+  font-family: var(--font-condensed);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: var(--space-2) var(--space-4);
+}
+
+/* TAG ──────────────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  background: var(--ash-600);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.tag:hover { background: var(--ash-500); color: var(--text-primary); border-color: var(--border-strong); }
+.tag.active { background: rgba(232,66,10,0.15); color: var(--ember-300); border-color: var(--ember-500); }
+.tag-close {
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 10px;
+  margin-left: 2px;
+  transition: opacity var(--dur-fast);
+}
+.tag-close:hover { opacity: 1; }
+
+/* PLAYER BAR ───────────────────────────────────────────────── */
+.player-bar {
+  background: rgba(18,18,18,0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+.player-info { display: flex; align-items: center; gap: var(--space-3); flex: 1; min-width: 0; }
+.player-thumb {
+  width: 48px; height: 48px;
+  background: var(--ash-600);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.player-title { font-family: var(--font-condensed); font-weight: 600; font-size: var(--type-sm); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.player-channel { font-size: var(--type-xs); color: var(--text-tertiary); font-family: var(--font-condensed); }
+.player-controls { display: flex; align-items: center; gap: var(--space-3); }
+.player-btn {
+  width: 36px; height: 36px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: all var(--dur-fast);
+}
+.player-btn:hover { color: var(--text-primary); background: var(--ash-600); }
+.player-btn-play {
+  width: 40px; height: 40px;
+  background: var(--ember-400);
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: all var(--dur-fast);
+}
+.player-btn-play:hover { background: var(--ember-300); transform: scale(1.05); }
+.player-progress { flex: 1; max-width: 300px; }
+.player-time {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+/* PAGINATION ───────────────────────────────────────────────── */
+.pagination { display: flex; align-items: center; gap: var(--space-1); }
+.page-btn {
+  width: 36px; height: 36px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 700;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--dur-fast);
+}
+.page-btn:hover { background: var(--ash-600); color: var(--text-primary); border-color: var(--border-default); }
+.page-btn.active { background: var(--ember-400); color: #fff; border-color: var(--ember-400); }
+.page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* CHIP ─────────────────────────────────────────────────────── */
+.chip-group { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--ash-700);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.chip:hover { background: var(--ash-600); border-color: var(--border-default); color: var(--text-primary); }
+.chip.selected { background: rgba(232,66,10,0.15); border-color: var(--ember-400); color: var(--ember-300); }
+.chip-img { width: 20px; height: 20px; border-radius: 50%; background: var(--ash-500); }
+
+/* ACCORDION ────────────────────────────────────────────────── */
+.accordion { border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; }
+.accordion-item { border-bottom: 1px solid var(--border-subtle); }
+.accordion-item:last-child { border-bottom: none; }
+.accordion-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  transition: background var(--dur-fast);
+}
+.accordion-trigger:hover { background: var(--ash-700); }
+.accordion-trigger-text {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: var(--type-base);
+  color: var(--text-primary);
+}
+.accordion-arrow {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.accordion-item.open .accordion-arrow { transform: rotate(180deg); }
+.accordion-content {
+  padding: 0 var(--space-5) var(--space-5);
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  display: none;
+}
+.accordion-item.open .accordion-content { display: block; }
+
+/* COMMENT ──────────────────────────────────────────────────── */
+.comment {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.comment-body { flex: 1; }
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.comment-author { font-family: var(--font-condensed); font-weight: 700; font-size: var(--type-base); }
+.comment-time { font-size: var(--type-xs); color: var(--text-tertiary); font-family: var(--font-condensed); }
+.comment-text { font-size: var(--type-sm); color: var(--text-secondary); line-height: var(--lh-relaxed); }
+.comment-actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.comment-action { cursor: pointer; transition: color var(--dur-fast); }
+.comment-action:hover { color: var(--text-primary); }
+.comment-action.liked { color: var(--ember-400); }
+
+/* DIVIDER ──────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border-subtle); margin: var(--space-6) 0; }
+.divider-label {
+  display: flex; align-items: center; gap: var(--space-4);
+  color: var(--text-tertiary);
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  margin: var(--space-6) 0;
+}
+.divider-label::before, .divider-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border-subtle);
+}
+
+/* LOADING STATES ───────────────────────────────────────────── */
+.spinner {
+  width: 24px; height: 24px;
+  border: 2px solid var(--ash-600);
+  border-top-color: var(--ember-400);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.spinner-sm { width: 16px; height: 16px; }
+.spinner-lg { width: 36px; height: 36px; border-width: 3px; }
+
+/* EMPTY STATE ──────────────────────────────────────────────── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16) var(--space-8);
+  text-align: center;
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-xl);
+}
+.empty-state-icon { font-size: 48px; margin-bottom: var(--space-4); opacity: 0.4; }
+.empty-state-title {
+  font-family: var(--font-display);
+  font-size: var(--type-xl);
+  letter-spacing: var(--ls-wide);
+  margin-bottom: var(--space-2);
+  color: var(--text-secondary);
+}
+.empty-state-desc { font-size: var(--type-sm); color: var(--text-tertiary); max-width: 320px; margin-bottom: var(--space-6); }
+
+/* CODE / TOKEN ─────────────────────────────────────────────── */
+.code-token {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: var(--type-xs);
+  background: var(--ash-700);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  color: var(--ember-300);
+}
+code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9em; color: var(--ember-200); }
+
+/* VIEWER ───────────────────────────────────────────────────── */
+.hero-block {
+  min-height: 320px;
+  background: linear-gradient(135deg, var(--ash-800) 0%, var(--ash-900) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+.hero-block::before {
+  content: 'V5';
+  position: absolute;
+  top: -20px; right: -10px;
+  font-family: var(--font-display);
+  font-size: 200px;
+  color: rgba(255,255,255,0.02);
+  letter-spacing: -10px;
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-family: var(--font-condensed);
+  font-size: var(--type-sm);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--ember-400);
+  margin-bottom: var(--space-2);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--type-3xl);
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-4);
+}
+.hero-sub { font-size: var(--type-base); color: var(--text-secondary); max-width: 500px; line-height: var(--lh-relaxed); margin-bottom: var(--space-6); }
+
+/* DARK BOX DEMO ────────────────────────────────────────────── */
+.demo-box {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+/* ── PAGE LAYOUT ─────────────────────────────────────────── */
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,13,13,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 var(--space-6);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.page-nav-logo {
+  font-family: var(--font-display);
+  font-size: var(--type-lg);
+  letter-spacing: var(--ls-widest);
+}
+.page-nav-logo span { color: var(--ember-400); }
+.page-nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.ds-version {
+  font-family: var(--font-condensed);
+  font-size: var(--type-xs);
+  font-weight: 700;
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  border: 1px solid var(--border-subtle);
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE NAV -->
+<nav class="page-nav">
+  <div class="page-nav-logo">VILLAGE<span>FIVE</span></div>
+  <div class="page-nav-right">
+    <span class="ds-version">Design System v1.0</span>
+    <div class="badge badge-md badge-ember badge-dot">Disaster Docs</div>
+  </div>
+</nav>
+
+<!-- SYSTEM HEADER -->
+<div class="system-header">
+  <div class="container">
+    <div class="system-header-eyebrow">VillageFive Design System</div>
+    <h1 class="system-header-title">Built for<br>the <em>Aftermath</em></h1>
+    <p class="system-header-sub">A complete design language for VillageFive — the documentary YouTube channel covering disaster, resilience, and human survival. Dark, high-contrast, editorial.</p>
+    <div class="system-header-meta">
+      <div class="meta-item">
+        <span class="meta-item-value">30+</span>
+        <span class="meta-item-label">Components</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-item-value">9</span>
+        <span class="meta-item-label">Type Weights</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-item-value">8px</span>
+        <span class="meta-item-label">Base Grid</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-item-value">AAA</span>
+        <span class="meta-item-label">WCAG Primary</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 1: COLOR ─────────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Color</h2>
+    <span>01 — Ash / Ember / Signal / Static</span>
+  </div>
+
+  <!-- Neutral Scale -->
+  <div class="color-swatch-group">
+    <div class="color-swatch-group-label">Ash Neutrals — Surface & Text</div>
+    <div class="color-row">
+      <div class="swatch" style="background:#0D0D0D"><span class="swatch-hex" style="color:#5A5A5A">#0D0D0D</span><span class="swatch-name" style="color:#3D3D3D">ash-900</span></div>
+      <div class="swatch" style="background:#141414"><span class="swatch-hex" style="color:#5A5A5A">#141414</span><span class="swatch-name" style="color:#3D3D3D">ash-800</span></div>
+      <div class="swatch" style="background:#1C1C1C"><span class="swatch-hex" style="color:#5A5A5A">#1C1C1C</span><span class="swatch-name" style="color:#3D3D3D">ash-700</span></div>
+      <div class="swatch" style="background:#252525"><span class="swatch-hex" style="color:#8A8A8A">#252525</span><span class="swatch-name" style="color:#5A5A5A">ash-600</span></div>
+      <div class="swatch" style="background:#2F2F2F"><span class="swatch-hex" style="color:#8A8A8A">#2F2F2F</span><span class="swatch-name" style="color:#5A5A5A">ash-500</span></div>
+      <div class="swatch" style="background:#3D3D3D"><span class="swatch-hex" style="color:#B8B8B8">#3D3D3D</span><span class="swatch-name" style="color:#8A8A8A">ash-400</span></div>
+      <div class="swatch" style="background:#5A5A5A"><span class="swatch-hex" style="color:#E4E4E4">#5A5A5A</span><span class="swatch-name" style="color:#B8B8B8">ash-300</span></div>
+      <div class="swatch" style="background:#8A8A8A"><span class="swatch-hex" style="color:#141414">#8A8A8A</span><span class="swatch-name" style="color:#252525">ash-200</span></div>
+      <div class="swatch" style="background:#B8B8B8"><span class="swatch-hex" style="color:#141414">#B8B8B8</span><span class="swatch-name" style="color:#252525">ash-100</span></div>
+      <div class="swatch" style="background:#E4E4E4"><span class="swatch-hex" style="color:#141414">#E4E4E4</span><span class="swatch-name" style="color:#252525">ash-050</span></div>
+      <div class="swatch" style="background:#F5F5F0"><span class="swatch-hex" style="color:#141414">#F5F5F0</span><span class="swatch-name" style="color:#252525">ash-000</span></div>
+    </div>
+  </div>
+
+  <div class="color-swatch-group">
+    <div class="color-swatch-group-label">Ember — Primary Accent</div>
+    <div class="color-row">
+      <div class="swatch" style="background:#8B2500"><span class="swatch-hex" style="color:#FF8A60">#8B2500</span><span class="swatch-name" style="color:#FF6030">ember-600</span></div>
+      <div class="swatch" style="background:#C13000"><span class="swatch-hex" style="color:#FF8A60">#C13000</span><span class="swatch-name" style="color:#FF6030">ember-500</span></div>
+      <div class="swatch" style="background:#E8420A"><span class="swatch-hex" style="color:#fff">#E8420A</span><span class="swatch-name" style="color:#FFCAB4">ember-400</span></div>
+      <div class="swatch" style="background:#FF6030"><span class="swatch-hex" style="color:#fff">#FF6030</span><span class="swatch-name" style="color:#FFCAB4">ember-300</span></div>
+      <div class="swatch" style="background:#FF8A60"><span class="swatch-hex" style="color:#8B2500">#FF8A60</span><span class="swatch-name" style="color:#8B2500">ember-200</span></div>
+      <div class="swatch" style="background:#FFCAB4"><span class="swatch-hex" style="color:#8B2500">#FFCAB4</span><span class="swatch-name" style="color:#8B2500">ember-100</span></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="color-swatch-group">
+      <div class="color-swatch-group-label">Signal — Warning / Alert</div>
+      <div class="color-row">
+        <div class="swatch" style="background:#D4A017"><span class="swatch-hex" style="color:#0D0D0D">#D4A017</span><span class="swatch-name" style="color:#252525">signal-400</span></div>
+        <div class="swatch" style="background:#F0BB20"><span class="swatch-hex" style="color:#0D0D0D">#F0BB20</span><span class="swatch-name" style="color:#252525">signal-300</span></div>
+        <div class="swatch" style="background:#FFF0B3"><span class="swatch-hex" style="color:#0D0D0D">#FFF0B3</span><span class="swatch-name" style="color:#252525">signal-100</span></div>
+      </div>
+    </div>
+    <div class="color-swatch-group">
+      <div class="color-swatch-group-label">Static — UI / Links</div>
+      <div class="color-row">
+        <div class="swatch" style="background:#4A6FA5"><span class="swatch-hex" style="color:#fff">#4A6FA5</span><span class="swatch-name" style="color:#C5D5EB">static-400</span></div>
+        <div class="swatch" style="background:#6B8FBF"><span class="swatch-hex" style="color:#fff">#6B8FBF</span><span class="swatch-name" style="color:#C5D5EB">static-300</span></div>
+        <div class="swatch" style="background:#C5D5EB"><span class="swatch-hex" style="color:#1C1C1C">#C5D5EB</span><span class="swatch-name" style="color:#252525">static-100</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contrast Table -->
+  <div class="spec-label" style="margin-top: var(--space-10)">Contrast Ratios — WCAG 2.1</div>
+  <table class="token-table">
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>Color</th>
+        <th>On Background</th>
+        <th>Ratio</th>
+        <th>Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>--text-primary</td>
+        <td><span class="color-chip" style="background:#F5F5F0"></span>#F5F5F0</td>
+        <td>#0D0D0D</td>
+        <td>18.4:1</td>
+        <td><span class="contrast-pass pass-aaa">✓ AAA</span></td>
+      </tr>
+      <tr>
+        <td>--text-secondary</td>
+        <td><span class="color-chip" style="background:#B8B8B8"></span>#B8B8B8</td>
+        <td>#0D0D0D</td>
+        <td>11.2:1</td>
+        <td><span class="contrast-pass pass-aaa">✓ AAA</span></td>
+      </tr>
+      <tr>
+        <td>--text-tertiary</td>
+        <td><span class="color-chip" style="background:#8A8A8A"></span>#8A8A8A</td>
+        <td>#0D0D0D</td>
+        <td>6.8:1</td>
+        <td><span class="contrast-pass pass-aaa">✓ AAA</span></td>
+      </tr>
+      <tr>
+        <td>--text-accent</td>
+        <td><span class="color-chip" style="background:#E8420A"></span>#E8420A</td>
+        <td>#0D0D0D</td>
+        <td>4.72:1</td>
+        <td><span class="contrast-pass pass-aa">✓ AA</span></td>
+      </tr>
+      <tr>
+        <td>--text-signal</td>
+        <td><span class="color-chip" style="background:#D4A017"></span>#D4A017</td>
+        <td>#0D0D0D</td>
+        <td>5.1:1</td>
+        <td><span class="contrast-pass pass-aa">✓ AA</span></td>
+      </tr>
+      <tr>
+        <td>--text-disabled</td>
+        <td><span class="color-chip" style="background:#5A5A5A"></span>#5A5A5A</td>
+        <td>#0D0D0D</td>
+        <td>3.8:1</td>
+        <td><span class="contrast-pass pass-large">⚠ Large only</span></td>
+      </tr>
+      <tr>
+        <td>--static-400</td>
+        <td><span class="color-chip" style="background:#4A6FA5"></span>#4A6FA5</td>
+        <td>#0D0D0D</td>
+        <td>3.85:1</td>
+        <td><span class="contrast-pass pass-large">⚠ Large only</span></td>
+      </tr>
+      <tr>
+        <td>btn-primary text</td>
+        <td><span class="color-chip" style="background:#fff"></span>#FFFFFF</td>
+        <td>#E8420A</td>
+        <td>4.1:1</td>
+        <td><span class="contrast-pass pass-aa">✓ AA</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ── SECTION 2: TYPOGRAPHY ─────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Typography</h2>
+    <span>02 — 9-weight scale · Bebas Neue / Barlow Condensed / Barlow</span>
+  </div>
+
+  <!-- Scale -->
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">4XL / Hero</span><span class="type-spec-values">80px · Bebas Neue · tight · wide LS</span></div>
+    <div class="type-specimen-text" style="font-family:var(--font-display);font-size:var(--type-4xl);letter-spacing:var(--ls-wide);line-height:var(--lh-tight);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Wildfire</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">3XL / Display</span><span class="type-spec-values">52px · Bebas Neue · tight</span></div>
+    <div class="type-specimen-text" style="font-family:var(--font-display);font-size:var(--type-3xl);letter-spacing:var(--ls-wide);line-height:var(--lh-tight);">Storm Season 2024</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">2XL / Title</span><span class="type-spec-values">36px · Bebas Neue · wide LS</span></div>
+    <div class="type-specimen-text" style="font-family:var(--font-display);font-size:var(--type-2xl);letter-spacing:var(--ls-wide);">Category 5: The Inside Story</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">XL / Heading</span><span class="type-spec-values">28px · Bebas Neue · wide LS</span></div>
+    <div class="type-specimen-text" style="font-family:var(--font-display);font-size:var(--type-xl);letter-spacing:var(--ls-wide);">The Survivors Return to Ground Zero</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">LG / Subheading</span><span class="type-spec-values">22px · Barlow Condensed 700</span></div>
+    <div class="type-specimen-text" style="font-family:var(--font-condensed);font-size:var(--type-lg);font-weight:700;letter-spacing:-0.01em;">How 40,000 residents evacuated in under six hours</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">MD / Body Large</span><span class="type-spec-values">18px · Barlow 400 · relaxed</span></div>
+    <div class="type-specimen-text" style="font-size:var(--type-md);color:var(--text-secondary);line-height:var(--lh-relaxed);">The levees broke at 4:12 AM. By dawn, the entire lower district was underwater. This is the story of what happened next.</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">Base / Body</span><span class="type-spec-values">15px · Barlow 400 · normal</span></div>
+    <div class="type-specimen-text" style="font-size:var(--type-base);color:var(--text-secondary);line-height:var(--lh-normal);max-width:600px;">When the first tremors hit at 6:47 AM, few residents could have predicted the scale of what was coming. The fault line had been under pressure for decades, and scientists had long warned that a magnitude 7+ event was overdue.</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">SM / Caption</span><span class="type-spec-values">13px · Barlow 300 · tertiary</span></div>
+    <div class="type-specimen-text" style="font-size:var(--type-sm);color:var(--text-tertiary);font-weight:300;">Video by @theroberthu · VillageFive Original Series · 2024</div>
+  </div>
+  <div class="type-specimen-row">
+    <div class="type-spec-meta"><span class="type-spec-name">XS / Micro</span><span class="type-spec-values">11px · Barlow Condensed 700 · widest LS</span></div>
+    <div class="type-specimen-text" style="font-family:var(--font-condensed);font-size:var(--type-xs);font-weight:700;letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-tertiary);">Natural Disaster · Documentary · 42 min · HD</div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 3: SPACING ──────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Spacing</h2>
+    <span>03 — 8px Base Grid · 12-stop scale</span>
+  </div>
+  <div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:4px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-1</span><span class="spacing-value">4px</span><span class="spacing-usage">Tight gap, inner chip padding</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:8px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-2</span><span class="spacing-value">8px</span><span class="spacing-usage">Icon-to-label, badge padding</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:12px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-3</span><span class="spacing-value">12px</span><span class="spacing-usage">List item gap, tight sections</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:16px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-4</span><span class="spacing-value">16px</span><span class="spacing-usage">Card padding (inner), grid gap</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:24px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-6</span><span class="spacing-value">24px</span><span class="spacing-usage">Section inner padding, modal padding</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:32px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-8</span><span class="spacing-value">32px</span><span class="spacing-usage">Button XL padding, component gap</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:40px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-10</span><span class="spacing-value">40px</span><span class="spacing-usage">Section header margin, hero sub</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:48px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-12</span><span class="spacing-value">48px</span><span class="spacing-usage">System header block padding</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:64px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-16</span><span class="spacing-value">64px</span><span class="spacing-usage">System header top padding</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:80px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-20</span><span class="spacing-value">80px</span><span class="spacing-usage">Section vertical rhythm</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:96px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-24</span><span class="spacing-value">96px</span><span class="spacing-usage">Large section gaps</span></div></div>
+    <div class="spacing-row"><div class="spacing-bar-wrap"><div class="spacing-bar" style="width:128px;"></div></div><div class="spacing-info"><span class="spacing-token">--space-32</span><span class="spacing-value">128px</span><span class="spacing-usage">Hero / full-bleed separation</span></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 4: BUTTONS ─────────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Buttons</h2>
+    <span>04 — 7 variants · 4 sizes · 5 states</span>
+  </div>
+
+  <div class="spec-label">Variants</div>
+  <div class="component-row">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md">Watch Now</button>
+      <span class="component-label">Primary</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-secondary btn-md">Subscribe</button>
+      <span class="component-label">Secondary</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-ghost btn-md">Learn More</button>
+      <span class="component-label">Ghost</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-ember-ghost btn-md">View Series</button>
+      <span class="component-label">Ember Ghost</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-signal btn-md">Alert</button>
+      <span class="component-label">Signal</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-destructive btn-md">Delete</button>
+      <span class="component-label">Destructive</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-icon"><span>⟨</span></button>
+      <span class="component-label">Icon</span>
+    </div>
+  </div>
+
+  <div class="spec-label">Sizes</div>
+  <div class="component-row align-center">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary btn-md">Medium</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+    <button class="btn btn-primary btn-xl">Extra Large</button>
+  </div>
+
+  <div class="spec-label">States</div>
+  <div class="component-row">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md">Default</button>
+      <span class="component-label">Default</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md" style="background:var(--ember-300);transform:translateY(-1px);box-shadow:var(--shadow-glow-ember)">Hover</button>
+      <span class="component-label">Hover</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md" style="outline:2px solid var(--ember-400);outline-offset:3px">Focus</button>
+      <span class="component-label">Focus</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md" style="background:var(--ember-500);">Active</button>
+      <span class="component-label">Active</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md btn-loading">Loading</button>
+      <span class="component-label">Loading</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="btn btn-primary btn-md" disabled>Disabled</button>
+      <span class="component-label">Disabled</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 5: BADGES + TAGS ──────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Badges &amp; Tags</h2>
+    <span>05 — Status, Category, Filter</span>
+  </div>
+
+  <div class="spec-label">Badges</div>
+  <div class="component-row align-center">
+    <span class="badge badge-sm badge-ember">Wildfire</span>
+    <span class="badge badge-md badge-ember badge-dot">New Episode</span>
+    <span class="badge badge-lg badge-ember">Documentary</span>
+    <span class="badge badge-md badge-signal badge-dot">Breaking</span>
+    <span class="badge badge-md badge-neutral">Archive</span>
+    <span class="badge badge-md badge-live badge-dot">Live</span>
+  </div>
+
+  <div class="spec-label" style="margin-top:var(--space-6)">Tags / Filter Chips</div>
+  <div class="chip-group">
+    <div class="tag">All</div>
+    <div class="tag active">Earthquake</div>
+    <div class="tag">Flood</div>
+    <div class="tag">Hurricane</div>
+    <div class="tag">Wildfire</div>
+    <div class="tag">Tsunami</div>
+    <div class="tag">Volcano</div>
+    <div class="tag">Tornado</div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 6: CARDS ──────────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Cards</h2>
+    <span>06 — Video, Feature, Stat, Episode</span>
+  </div>
+
+  <div class="spec-label">Video Cards — Default + Hover State</div>
+  <div class="grid-3" style="margin-bottom:var(--space-10)">
+    <div class="video-card card">
+      <div class="video-card-thumb">
+        <div class="video-card-thumb-placeholder">🌋</div>
+        <div class="video-card-duration">44:18</div>
+        <div class="play-overlay"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-card-body">
+        <div class="video-card-category">Volcano</div>
+        <div class="video-card-title">When Kilauea Woke Up: The 2018 Lower East Rift Zone Eruption</div>
+        <div class="video-card-meta"><span>2.1M views</span><span>3 months ago</span></div>
+      </div>
+    </div>
+    <div class="video-card card" style="border-color:var(--border-default);transform:translateY(-2px);box-shadow:var(--shadow-lg)">
+      <div class="video-card-thumb">
+        <div class="video-card-thumb-placeholder">🌊</div>
+        <div class="video-card-duration">58:02</div>
+        <div class="play-overlay" style="background:rgba(0,0,0,0.4)"><div class="play-icon" style="opacity:1;transform:scale(1)"></div></div>
+      </div>
+      <div class="video-card-body">
+        <div class="video-card-category">Tsunami</div>
+        <div class="video-card-title">Japan 2011: The Day the Ocean Came Inland — A Survivors' Account</div>
+        <div class="video-card-meta"><span>8.4M views</span><span>1 year ago</span></div>
+      </div>
+    </div>
+    <div class="video-card card">
+      <div class="video-card-thumb">
+        <div class="video-card-thumb-placeholder">🔥</div>
+        <div class="video-card-duration">1:12:44</div>
+        <div class="play-overlay"><div class="play-icon"></div></div>
+      </div>
+      <div class="video-card-body">
+        <div class="video-card-category">Wildfire</div>
+        <div class="video-card-title">Camp Fire: How Paradise Burned in 85 Minutes and 85 People Lost Their Lives</div>
+        <div class="video-card-meta"><span>4.7M views</span><span>8 months ago</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-label">Feature Cards</div>
+  <div class="grid-3" style="margin-bottom:var(--space-10)">
+    <div class="feature-card card">
+      <div class="feature-card-icon">📡</div>
+      <div class="feature-card-title">Early Warning</div>
+      <div class="feature-card-desc">In-depth coverage of disaster warning systems, their successes, failures, and the lives they've saved — or failed to save.</div>
+    </div>
+    <div class="feature-card card">
+      <div class="feature-card-icon">🗺️</div>
+      <div class="feature-card-title">Ground Zero</div>
+      <div class="feature-card-desc">On-location documentary series. We go where the disaster struck — months and years after the cameras left — to find out what really happened.</div>
+    </div>
+    <div class="feature-card card">
+      <div class="feature-card-icon">👤</div>
+      <div class="feature-card-title">The Survivors</div>
+      <div class="feature-card-desc">Long-form interviews with people who lived through history's most devastating natural events. Unscripted. Unfiltered. Unforgettable.</div>
+    </div>
+  </div>
+
+  <div class="spec-label">Stat Cards</div>
+  <div class="grid-4" style="margin-bottom:var(--space-10)">
+    <div class="stat-card card">
+      <div class="stat-number">2<span class="stat-number-accent">K</span></div>
+      <div class="stat-label">Subscribers</div>
+      <div class="stat-trend">▲ +12% this month</div>
+    </div>
+    <div class="stat-card card">
+      <div class="stat-number">47<span class="stat-number-accent">+</span></div>
+      <div class="stat-label">Videos Published</div>
+    </div>
+    <div class="stat-card card">
+      <div class="stat-number" style="color:var(--ember-400)">8.4M</div>
+      <div class="stat-label">Total Views</div>
+      <div class="stat-trend">▲ Best month ever</div>
+    </div>
+    <div class="stat-card card">
+      <div class="stat-number">12<span class="stat-number-accent">%</span></div>
+      <div class="stat-label">Watch Time Growth</div>
+    </div>
+  </div>
+
+  <div class="spec-label">Episode List Cards</div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+    <div class="episode-card">
+      <div class="episode-thumb">🌋</div>
+      <div class="episode-info">
+        <div class="episode-num">S2 · E07</div>
+        <div class="episode-title">Ring of Fire: Pacific Plate Movements and Why the Next Big One Is Overdue</div>
+        <div class="episode-meta">44 min · 1.2M views · Mar 2024</div>
+      </div>
+      <span class="badge badge-sm badge-ember">New</span>
+    </div>
+    <div class="episode-card" style="border-color:var(--border-default);background:var(--ash-500)">
+      <div class="episode-thumb">🌊</div>
+      <div class="episode-info">
+        <div class="episode-num">S2 · E06</div>
+        <div class="episode-title">Storm Surge: Inside the Hurricane Research Division That Flies Into Storms</div>
+        <div class="episode-meta">51 min · 890K views · Feb 2024</div>
+      </div>
+      <span class="badge badge-sm badge-neutral" style="opacity:0.7; font-size:9px">Watched</span>
+    </div>
+    <div class="episode-card">
+      <div class="episode-thumb">🔥</div>
+      <div class="episode-info">
+        <div class="episode-num">S2 · E05</div>
+        <div class="episode-title">Firestorm: The Technology That Failed During California's Worst Wildfire Season</div>
+        <div class="episode-meta">38 min · 2.1M views · Jan 2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 7: FORMS ───────────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Form Elements</h2>
+    <span>07 — Input, Textarea, Select, Toggle, Checkbox</span>
+  </div>
+
+  <div class="grid-2">
+    <div style="display:flex;flex-direction:column;gap:var(--space-6)">
+      <div class="input-group">
+        <label class="input-label">Email Address</label>
+        <input class="input" type="text" placeholder="you@example.com">
+        <span class="input-hint">We'll never share your email.</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Error State</label>
+        <input class="input input-error" type="text" value="invalid@">
+        <span class="input-hint input-hint-error">⚠ Please enter a valid email address.</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Success State</label>
+        <input class="input input-success" type="text" value="robert@villagefive.com">
+        <span class="input-hint input-hint-success">✓ Email confirmed.</span>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Disabled</label>
+        <input class="input" type="text" value="Read only content" disabled>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-6)">
+      <div class="input-group">
+        <label class="input-label">Search</label>
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input class="input" type="text" placeholder="Search disasters, locations, years…">
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Category</label>
+        <select class="select">
+          <option>All Disasters</option>
+          <option>Earthquake</option>
+          <option>Flood</option>
+          <option>Hurricane</option>
+          <option>Wildfire</option>
+          <option>Tsunami</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Comment</label>
+        <textarea class="textarea" placeholder="Share your thoughts on this documentary…"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-label" style="margin-top:var(--space-8)">Toggle Switches</div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+    <label class="toggle-wrap">
+      <div class="toggle">
+        <input type="checkbox" checked>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      </div>
+      <span class="toggle-label">Email notifications for new uploads</span>
+    </label>
+    <label class="toggle-wrap">
+      <div class="toggle">
+        <input type="checkbox">
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      </div>
+      <span class="toggle-label">Autoplay next episode</span>
+    </label>
+    <label class="toggle-wrap">
+      <div class="toggle">
+        <input type="checkbox" disabled>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      </div>
+      <span class="toggle-label" style="opacity:0.4">Dark mode (unavailable)</span>
+    </label>
+  </div>
+
+  <div class="spec-label" style="margin-top:var(--space-6)">Checkboxes</div>
+  <div style="display:flex;gap:var(--space-8)">
+    <label class="checkbox-wrap">
+      <div class="checkbox"></div>
+      <span class="checkbox-label">Unchecked</span>
+    </label>
+    <label class="checkbox-wrap">
+      <div class="checkbox checked"></div>
+      <span class="checkbox-label">Checked</span>
+    </label>
+    <label class="checkbox-wrap">
+      <div class="checkbox indeterminate"></div>
+      <span class="checkbox-label">Indeterminate</span>
+    </label>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 8: NAVIGATION ─────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Navigation</h2>
+    <span>08 — Header Nav, Tab Nav, Breadcrumb</span>
+  </div>
+
+  <div class="spec-label">Header Navigation</div>
+  <div class="demo-box" style="margin-bottom:var(--space-8);padding:0">
+    <nav class="nav" style="position:relative;border-bottom:none;border-radius:var(--radius-lg)">
+      <div class="container" style="width:100%">
+        <div class="nav-inner">
+          <div class="nav-logo">VILLAGE<span>FIVE</span></div>
+          <ul class="nav-links">
+            <li><a class="nav-link active" href="#">Watch</a></li>
+            <li><a class="nav-link" href="#">Series</a></li>
+            <li><a class="nav-link" href="#">About</a></li>
+            <li><a class="nav-link" href="#">Community</a></li>
+          </ul>
+          <div style="display:flex;gap:var(--space-2)">
+            <button class="btn btn-ghost btn-sm">⌕</button>
+            <button class="btn btn-primary btn-sm">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="spec-label">Tab Navigation</div>
+  <div class="demo-box" style="margin-bottom:var(--space-8)">
+    <div class="tab-nav">
+      <div class="tab active">All Videos</div>
+      <div class="tab">Earthquakes</div>
+      <div class="tab">Floods</div>
+      <div class="tab">Wildfires</div>
+      <div class="tab">Long-Form</div>
+    </div>
+  </div>
+
+  <div class="spec-label">Breadcrumb</div>
+  <div class="breadcrumb">
+    <span class="breadcrumb-item">Home</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-item">Series</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-item">Ground Zero</span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-item">Season 2</span>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 9: ALERTS ──────────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Alerts &amp; Feedback</h2>
+    <span>09 — Alert, Toast, Progress</span>
+  </div>
+
+  <div class="spec-label">Alert Variants</div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8)">
+    <div class="alert alert-info">
+      <span class="alert-icon">ℹ</span>
+      <div class="alert-content">
+        <div class="alert-title">New Series Starting</div>
+        Season 3 of Ground Zero premieres March 15. Set your reminder now.
+      </div>
+    </div>
+    <div class="alert alert-success">
+      <span class="alert-icon">✓</span>
+      <div class="alert-content">
+        <div class="alert-title">Subscribed</div>
+        You're now subscribed to VillageFive. You'll get notified of new uploads.
+      </div>
+    </div>
+    <div class="alert alert-warning">
+      <span class="alert-icon">⚠</span>
+      <div class="alert-content">
+        <div class="alert-title">Content Advisory</div>
+        This documentary contains real footage from the disaster. Viewer discretion is advised.
+      </div>
+    </div>
+    <div class="alert alert-error">
+      <span class="alert-icon">✕</span>
+      <div class="alert-content">
+        <div class="alert-title">Upload Failed</div>
+        Your video could not be uploaded. Check your connection and try again.
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-label">Toast Notifications</div>
+  <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);margin-bottom:var(--space-8)">
+    <div class="toast"><span class="toast-dot toast-dot-ember"></span>New episode published: Kilauea 2024</div>
+    <div class="toast"><span class="toast-dot toast-dot-success"></span>Comment saved successfully</div>
+    <div class="toast"><span class="toast-dot toast-dot-warn"></span>Connection unstable — buffering</div>
+  </div>
+
+  <div class="spec-label">Progress Bar</div>
+  <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+    <div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)">
+        <span style="font-family:var(--font-condensed);font-size:var(--type-xs);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-tertiary)">Watch Progress</span>
+        <span style="font-family:var(--font-condensed);font-size:var(--type-xs);color:var(--text-tertiary)">32:14 / 44:18</span>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-fill" style="width:72%"><div class="progress-thumb"></div></div></div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)">
+        <span style="font-family:var(--font-condensed);font-size:var(--type-xs);letter-spacing:var(--ls-widest);text-transform:uppercase;color:var(--text-tertiary)">Upload Progress</span>
+        <span style="font-family:var(--font-condensed);font-size:var(--type-xs);color:var(--signal-400)">47%</span>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-fill" style="width:47%;background:var(--signal-400)"><div class="progress-thumb"></div></div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 10: OVERLAYS ───────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Overlays</h2>
+    <span>10 — Modal, Menu, Tooltip</span>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div class="spec-label">Modal</div>
+      <div class="modal-backdrop" style="padding:0">
+        <div class="modal" style="max-width:100%">
+          <div class="modal-header">
+            <span class="modal-title">Content Advisory</span>
+            <button class="modal-close">✕</button>
+          </div>
+          <div class="modal-body">
+            <p style="font-size:var(--type-sm);color:var(--text-secondary);line-height:var(--lh-relaxed)">
+              This documentary contains graphic real-life footage from natural disasters including footage of structural collapse and evacuation scenes. Some viewers may find this content distressing.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-ghost btn-sm">Cancel</button>
+            <button class="btn btn-primary btn-sm">Continue Watching</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="spec-label">Context Menu</div>
+      <div class="menu">
+        <div class="menu-section-label">Episode Actions</div>
+        <div class="menu-item"><span class="menu-item-icon">▶</span> Watch Now</div>
+        <div class="menu-item active"><span class="menu-item-icon">✓</span> Mark as Watched</div>
+        <div class="menu-item"><span class="menu-item-icon">⊕</span> Add to Watch Later</div>
+        <div class="menu-item"><span class="menu-item-icon">⤴</span> Share Episode</div>
+        <div class="menu-sep"></div>
+        <div class="menu-item"><span class="menu-item-icon">⚑</span> Report Issue</div>
+        <div class="menu-item destructive"><span class="menu-item-icon">✕</span> Remove from History</div>
+      </div>
+
+      <div class="spec-label" style="margin-top:var(--space-8)">Tooltip</div>
+      <div style="display:flex;gap:var(--space-8);padding:var(--space-6) 0">
+        <div class="tooltip-wrap">
+          <button class="btn btn-icon">♡</button>
+          <div class="tooltip" style="opacity:1">Add to favorites</div>
+        </div>
+        <div class="tooltip-wrap">
+          <button class="btn btn-icon">⤴</button>
+          <div class="tooltip" style="opacity:1">Share this video</div>
+        </div>
+        <div class="tooltip-wrap">
+          <button class="btn btn-icon">⋯</button>
+          <div class="tooltip" style="opacity:1">More options</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 11: AVATAR + COMMENT ──────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Social</h2>
+    <span>11 — Avatar, Comment, Accordion</span>
+  </div>
+
+  <div class="spec-label">Avatars</div>
+  <div class="component-row align-center" style="margin-bottom:var(--space-8)">
+    <div class="avatar-wrap"><div class="avatar avatar-sm">RH</div></div>
+    <div class="avatar-wrap"><div class="avatar avatar-md avatar-ember">V5</div></div>
+    <div class="avatar-wrap" style="position:relative">
+      <div class="avatar avatar-lg">JD</div>
+      <span style="position:absolute;bottom:1px;right:1px;width:12px;height:12px;background:#4CAF50;border:2px solid var(--ash-900);border-radius:50%;"></span>
+    </div>
+    <div class="avatar-wrap"><div class="avatar avatar-xl">AB</div></div>
+  </div>
+
+  <div class="spec-label">Comments</div>
+  <div style="max-width:640px;margin-bottom:var(--space-8)">
+    <div class="comment">
+      <div class="avatar avatar-md avatar-ember">RH</div>
+      <div class="comment-body">
+        <div class="comment-header">
+          <span class="comment-author">@theroberthu</span>
+          <span class="badge badge-sm badge-ember">Creator</span>
+          <span class="comment-time">2h ago</span>
+        </div>
+        <div class="comment-text">This footage was incredibly difficult to obtain. The families who allowed us to use it showed tremendous courage. Thank you for watching and supporting the channel.</div>
+        <div class="comment-actions">
+          <span class="comment-action liked">♥ 847</span>
+          <span class="comment-action">Reply</span>
+          <span class="comment-action">Pin</span>
+        </div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar avatar-md">SK</div>
+      <div class="comment-body">
+        <div class="comment-header">
+          <span class="comment-author">StormchaseKaito</span>
+          <span class="comment-time">5h ago</span>
+        </div>
+        <div class="comment-text">As someone who was in Tohoku during 2011, this brought everything back. The attention to detail in your research is extraordinary. Keep making these.</div>
+        <div class="comment-actions">
+          <span class="comment-action">♥ 312</span>
+          <span class="comment-action">Reply</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spec-label">Accordion — FAQ</div>
+  <div class="accordion" style="max-width:640px">
+    <div class="accordion-item open">
+      <div class="accordion-trigger">
+        <span class="accordion-trigger-text">How do you source footage from disaster zones?</span>
+        <span class="accordion-arrow">▾</span>
+      </div>
+      <div class="accordion-content">We partner with news agencies, survivor families, and documentary archives worldwide. All footage is licensed, credited, and used with express permission from rights holders.</div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-trigger">
+        <span class="accordion-trigger-text">Are your documentaries suitable for younger viewers?</span>
+        <span class="accordion-arrow">▾</span>
+      </div>
+      <div class="accordion-content">Content varies by episode. Each video is clearly rated and includes content advisories. We recommend parental guidance for viewers under 16.</div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-trigger">
+        <span class="accordion-trigger-text">How can I support the channel?</span>
+        <span class="accordion-arrow">▾</span>
+      </div>
+      <div class="accordion-content">The best way to support VillageFive is to subscribe, watch the full videos, and share them. Membership tiers are also available for exclusive content.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── SECTION 12: MISC ────────────────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Utility Components</h2>
+    <span>12 — Player Bar, Pagination, Skeleton, Empty State, Spinner, Divider</span>
+  </div>
+
+  <div class="spec-label">Video Player Bar</div>
+  <div class="demo-box" style="padding:0;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--space-8)">
+    <div class="player-bar">
+      <div class="player-info">
+        <div class="player-thumb">🌋</div>
+        <div>
+          <div class="player-title">Ring of Fire: Pacific Plate Movements — Full Episode</div>
+          <div class="player-channel">VillageFive · Season 2</div>
+        </div>
+      </div>
+      <div class="player-controls">
+        <button class="player-btn">⟨⟨</button>
+        <button class="player-btn-play">▶</button>
+        <button class="player-btn">⟩⟩</button>
+      </div>
+      <div class="player-progress">
+        <div class="progress-bar-wrap"><div class="progress-fill" style="width:55%"><div class="progress-thumb" style="opacity:1"></div></div></div>
+      </div>
+      <div class="player-time">24:09 / 44:18</div>
+      <button class="player-btn">⋯</button>
+    </div>
+  </div>
+
+  <div class="spec-label">Pagination</div>
+  <div class="pagination" style="margin-bottom:var(--space-8)">
+    <button class="page-btn" disabled>‹</button>
+    <button class="page-btn active">1</button>
+    <button class="page-btn">2</button>
+    <button class="page-btn">3</button>
+    <button class="page-btn" style="width:auto;padding:0 var(--space-2);font-size:var(--type-sm);letter-spacing:0">…</button>
+    <button class="page-btn">12</button>
+    <button class="page-btn">›</button>
+  </div>
+
+  <div class="spec-label">Loading Skeleton</div>
+  <div class="grid-3" style="margin-bottom:var(--space-8)">
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="skeleton skeleton-thumb"></div>
+      <div class="skeleton skeleton-title"></div>
+      <div class="skeleton skeleton-text" style="width:80%"></div>
+      <div class="skeleton skeleton-text" style="width:50%"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="skeleton skeleton-thumb"></div>
+      <div class="skeleton skeleton-title" style="width:55%"></div>
+      <div class="skeleton skeleton-text" style="width:90%"></div>
+      <div class="skeleton skeleton-text" style="width:60%"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+      <div class="skeleton skeleton-thumb"></div>
+      <div class="skeleton skeleton-title" style="width:70%"></div>
+      <div class="skeleton skeleton-text"></div>
+      <div class="skeleton skeleton-text" style="width:40%"></div>
+    </div>
+  </div>
+
+  <div class="spec-label">Empty State</div>
+  <div class="empty-state" style="max-width:480px;margin-bottom:var(--space-8)">
+    <div class="empty-state-icon">📂</div>
+    <div class="empty-state-title">No Results Found</div>
+    <div class="empty-state-desc">We couldn't find any videos matching your search. Try different keywords or browse by category.</div>
+    <button class="btn btn-secondary btn-md">Browse All Videos</button>
+  </div>
+
+  <div class="spec-label">Spinners</div>
+  <div class="component-row align-center" style="margin-bottom:var(--space-8)">
+    <div class="spinner spinner-sm"></div>
+    <div class="spinner"></div>
+    <div class="spinner spinner-lg"></div>
+    <div style="display:flex;gap:var(--space-2);align-items:center"><div class="spinner"></div><span style="font-family:var(--font-condensed);font-size:var(--type-sm);color:var(--text-tertiary)">Loading episode…</span></div>
+  </div>
+
+  <div class="spec-label">Dividers</div>
+  <div class="divider"></div>
+  <div class="divider-label">Related Episodes</div>
+  <div class="divider"></div>
+</div>
+</div>
+
+<!-- ── SECTION 13: HERO EXAMPLE ───────────────────────────── -->
+<div class="section-wrap">
+<div class="container">
+  <div class="ds-section-header">
+    <h2>Hero Block</h2>
+    <span>13 — Channel hero / featured content placement</span>
+  </div>
+  <div class="hero-block">
+    <div class="hero-eyebrow">VillageFive Original · Season 2 Finale</div>
+    <div class="hero-title">The Last Hours of<br>Paradise, California</div>
+    <div class="hero-sub">On November 8, 2018, the town of Paradise was destroyed in under 2 hours. This is the definitive account of the Camp Fire — told by the people who lived it.</div>
+    <div style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+      <button class="btn btn-primary btn-lg">▶ Watch Now — 1:12:44</button>
+      <button class="btn btn-secondary btn-lg">+ Watch Later</button>
+      <span class="badge badge-md badge-live badge-dot" style="margin-left:auto;align-self:center">4.7M Views</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer style="padding:var(--space-12) 0;border-top:1px solid var(--border-subtle);background:var(--ash-900)">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-8)">
+      <div>
+        <div style="font-family:var(--font-display);font-size:var(--type-xl);letter-spacing:var(--ls-widest);margin-bottom:var(--space-2)">VILLAGE<span style="color:var(--ember-400)">FIVE</span></div>
+        <div style="font-size:var(--type-sm);color:var(--text-tertiary);max-width:280px;line-height:var(--lh-relaxed)">Documentary channel covering disasters, resilience, and the people who survived.</div>
+      </div>
+      <div style="display:flex;gap:var(--space-16)">
+        <div>
+          <div class="spec-label">Channel</div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3)">
+            <a href="#" style="font-family:var(--font-condensed);font-size:var(--type-sm);color:var(--text-tertiary);transition:color var(--dur-fast)" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-tertiary)'">Watch</a>
+            <a href="#" style="font-family:var(--font-condensed);font-size:var(--type-sm);color:var(--text-tertiary);transition:color var(--dur-fast)" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-tertiary)'">Series</a>
+            <a href="#" style="font-family:var(--font-condensed);font-size:var(--type-sm);color:var(--text-tertiary);transition:color var(--dur-fast)" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-tertiary)'">About</a>
+          </div>
+        </div>
+        <div>
+          <div class="spec-label">Connect</div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-top:var(--space-3)">
+            <a href="#" style="font-family:var(--font-condensed);font-size:var(--type-sm);color:var(--text-tertiary)">YouTube</a>
+            <a href="#" style="font-family:var(--font-condensed);font-size:var(--type-sm);color:var(--text-tertiary)">@theroberthu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-family:var(--font-condensed);font-size:var(--type-xs);color:var(--text-tertiary)">© 2025 VillageFive. All rights reserved.</span>
+      <span class="ds-version">Design System v1.0 · @theroberthu</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Accordion interactivity
+document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.accordion-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Toggle interactivity
+document.querySelectorAll('.toggle input').forEach(input => {
+  input.addEventListener('change', function() {
+    // visual handled by CSS
+  });
+});
+
+// Checkbox interactivity demo
+document.querySelectorAll('.checkbox-wrap').forEach(wrap => {
+  const box = wrap.querySelector('.checkbox');
+  if (!box) return;
+  wrap.addEventListener('click', () => {
+    if (box.classList.contains('indeterminate')) {
+      box.classList.remove('indeterminate');
+      box.classList.add('checked');
+    } else if (box.classList.contains('checked')) {
+      box.classList.remove('checked');
+    } else {
+      box.classList.add('checked');
+    }
+  });
+});
+
+// Tag interactivity
+document.querySelectorAll('.tag').forEach(tag => {
+  tag.addEventListener('click', function() {
+    document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Tab interactivity
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    this.closest('.tab-nav').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Chip select
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', function() { this.classList.toggle('selected'); });
+});
+</script>
+</body>
+</html>

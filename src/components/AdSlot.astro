@@ -1,0 +1,14 @@
+---
+interface Props {
+  type?: 'ad' | 'affiliate';
+  label?: string;
+}
+
+const { type = 'ad', label } = Astro.props;
+const className = type === 'affiliate' ? 'affiliate-slot' : 'ad-slot';
+const defaultLabel = type === 'affiliate' ? 'Affiliate Placement' : 'Ad Placement';
+---
+
+<div class={className}>
+  {label || defaultLabel}
+</div>

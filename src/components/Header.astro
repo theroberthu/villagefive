@@ -1,0 +1,38 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/newsletter', label: 'Newsletter' },
+];
+---
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">VILLAGE<span>FIVE</span></a>
+      <ul class="nav-links">
+        {links.map(link => (
+          <li>
+            <a
+              class={`nav-link${currentPath === link.href ? ' active' : ''}`}
+              href={link.href}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a
+        class="btn btn-primary btn-sm"
+        href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Subscribe
+      </a>
+    </div>
+  </div>
+</nav>

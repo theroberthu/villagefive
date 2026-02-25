@@ -1,0 +1,31 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  publishDate: string;
+  thumbnail?: string;
+}
+
+const { id, title, publishDate, thumbnail } = Astro.props;
+
+const thumbSrc = thumbnail || `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
+const videoUrl = `https://www.youtube.com/watch?v=${id}`;
+const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<a href={videoUrl} target="_blank" rel="noopener noreferrer" class="video-card card">
+  <div class="video-card-thumb">
+    <img class="video-card-thumb-img" src={thumbSrc} alt={title} loading="lazy" />
+    <div class="play-overlay"><div class="play-icon"></div></div>
+  </div>
+  <div class="video-card-body">
+    <div class="video-card-title">{title}</div>
+    <div class="video-card-meta">
+      <span>{formattedDate}</span>
+    </div>
+  </div>
+</a>
