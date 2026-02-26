@@ -141,7 +141,7 @@ ul, ol { list-style: none; }
 
 /* ── LAYOUT ────────────────────────────────────────────────── */
 .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-6); }
-.section-wrap { padding: var(--space-20) 0; }
+.section-wrap { padding: var(--space-12) 0; }
 
 /* ── BUTTONS ───────────────────────────────────────────────── */
 .btn {
@@ -371,7 +371,7 @@ ul, ol { list-style: none; }
 
 /* ── HERO ──────────────────────────────────────────────────── */
 .hero {
-  padding: var(--space-32) 0 var(--space-20);
+  padding: var(--space-16) 0 var(--space-10);
   position: relative;
   overflow: hidden;
 }
