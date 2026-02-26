@@ -10,11 +10,13 @@ interface Props {
   canonicalURL?: string;
 }
 
+const siteBase = 'https://villagefive.com';
+
 const {
   title,
   description,
-  ogImage = 'https://villagefive.com/images/villagefive_og_v3.png',
-  canonicalURL = Astro.url.href,
+  ogImage = `${siteBase}/images/villagefive_og_v3.png`,
+  canonicalURL = `${siteBase}${Astro.url.pathname}`,
 } = Astro.props;
 ---
 
@@ -57,6 +59,7 @@ const {
     gtag('js', new Date());
     gtag('config', 'G-FWXLNW3Q5Z');
   </script>
+  <slot name="head" />
 </head>
 <body>
   <Header />

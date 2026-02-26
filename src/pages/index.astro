@@ -2,17 +2,48 @@
 import Base from '../layouts/Base.astro';
 import YouTubeEmbed from '../components/YouTubeEmbed.astro';
 import VideoCard from '../components/VideoCard.astro';
-import NewsletterForm from '../components/NewsletterForm.astro';
 import videos from '../data/videos.json';
 
 const latestVideo = videos[0];
 const recentVideos = videos.slice(1, 7);
+
+const orgSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VillageFive",
+  "url": "https://villagefive.com",
+  "description": "VillageFive covers the disasters history forgot. Weekly documentaries on forgotten catastrophes, survivor stories, and the events that changed the world.",
+  "sameAs": [
+    "https://www.youtube.com/@villagefive",
+    "https://x.com/theroberthu"
+  ]
+});
+
+const videoSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": latestVideo.title,
+  "description": latestVideo.title,
+  "thumbnailUrl": latestVideo.thumbnail,
+  "uploadDate": latestVideo.publishDate,
+  "embedUrl": `https://www.youtube.com/embed/${latestVideo.id}`,
+  "contentUrl": `https://www.youtube.com/watch?v=${latestVideo.id}`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "VillageFive",
+    "url": "https://villagefive.com"
+  }
+});
 ---
 
 <Base
-  title="VillageFive: Disaster Documentaries"
-  description="VillageFive is a YouTube channel focused on disaster documentaries. Forgotten disasters, survivor stories, and the events that changed history."
+  title="VillageFive | Forgotten Disasters, Survivor Stories & History"
+  description="VillageFive covers the disasters history forgot. Weekly documentaries on forgotten catastrophes, survivor stories, and the events that changed the world."
+  canonicalURL="https://villagefive.com/"
 >
+  <script type="application/ld+json" set:html={orgSchema} slot="head" />
+  <script type="application/ld+json" set:html={videoSchema} slot="head" />
+
   <!-- Hero -->
   <section class="hero-atmo corner-brackets">
     <div class="container">
@@ -99,13 +130,36 @@ const recentVideos = videos.slice(1, 7);
           />
         ))}
       </div>
+      <div class="view-all">
+        <a
+          class="btn btn-secondary btn-lg"
+          href="https://www.youtube.com/@villagefive/videos"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View All on YouTube
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Newsletter CTA -->
+  <!-- Subscribe CTA -->
   <section class="section-wrap">
     <div class="container">
-      <NewsletterForm />
+      <div class="subscribe-cta">
+        <h2 class="subscribe-cta-title">Don't Miss a Story</h2>
+        <p class="subscribe-cta-desc">
+          New disaster stories every week. Subscribe on YouTube to stay updated.
+        </p>
+        <a
+          class="btn btn-primary btn-xl"
+          href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Subscribe on YouTube
+        </a>
+      </div>
     </div>
   </section>
 </Base>
@@ -197,5 +251,32 @@ const recentVideos = videos.slice(1, 7);
     color: var(--text-tertiary);
     letter-spacing: var(--ls-wide);
     text-transform: uppercase;
+  }
+
+  /* ── View All Link ─────────────────────────────────────── */
+  .view-all {
+    text-align: center;
+    margin-top: var(--space-8);
+  }
+
+  /* ── Subscribe CTA ─────────────────────────────────────── */
+  .subscribe-cta {
+    text-align: center;
+    padding: var(--space-12) 0;
+  }
+
+  .subscribe-cta-title {
+    font-family: var(--font-display);
+    font-size: var(--type-2xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-3);
+  }
+
+  .subscribe-cta-desc {
+    font-size: var(--type-md);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+    max-width: 480px;
+    margin: 0 auto var(--space-8);
   }
 </style>
