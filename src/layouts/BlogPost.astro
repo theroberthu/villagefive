@@ -147,8 +147,19 @@ const jsonLd = {
           <!-- Sidebar -->
           <aside class="blog-post-sidebar">
             <div class="sidebar-sticky">
-              <AdSlot type="ad" label="Sidebar Ad" />
-              <AdSlot type="affiliate" label="Book Recommendation" />
+              <div class="sidebar-subscribe">
+                <div class="sidebar-subscribe-title">Never Miss a Story</div>
+                <p class="sidebar-subscribe-desc">New disaster documentaries every week.</p>
+                <a
+                  class="btn btn-primary btn-md"
+                  href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="width: 100%;"
+                >
+                  Subscribe on YouTube
+                </a>
+              </div>
             </div>
           </aside>
         </div>
@@ -158,3 +169,29 @@ const jsonLd = {
   <Footer />
 </body>
 </html>
+
+<style>
+  .sidebar-subscribe {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    text-align: center;
+  }
+
+  .sidebar-subscribe-title {
+    font-family: var(--font-display);
+    font-size: var(--type-lg);
+    letter-spacing: var(--ls-wide);
+    color: var(--ember-400);
+    margin-bottom: var(--space-2);
+  }
+
+  .sidebar-subscribe-desc {
+    font-family: var(--font-body);
+    font-size: var(--type-sm);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-4);
+  }
+</style>
