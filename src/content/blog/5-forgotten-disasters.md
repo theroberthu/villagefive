@@ -4,7 +4,7 @@ description: "Five catastrophic disasters that killed thousands. The Peshtigo Fi
 publishDate: 2025-02-22
 tags: ["forgotten disasters", "top 5", "historical"]
 youtubeVideoId: "Cbq9J5jI-z4"
-featuredImage: "/images/blog/forgotten-disasters.jpg"
+featuredImage: "https://img.youtube.com/vi/Cbq9J5jI-z4/maxresdefault.jpg"
 ---
 
 History remembers the Titanic. It remembers Pompeii. It remembers Chernobyl.
