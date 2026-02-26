@@ -6,12 +6,44 @@ import videos from '../data/videos.json';
 
 const latestVideo = videos[0];
 const recentVideos = videos.slice(1, 7);
+
+const orgSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "VillageFive",
+  "url": "https://villagefive.com",
+  "description": "VillageFive covers the disasters history forgot. Weekly documentaries on forgotten catastrophes, survivor stories, and the events that changed the world.",
+  "sameAs": [
+    "https://www.youtube.com/@villagefive",
+    "https://x.com/theroberthu"
+  ]
+});
+
+const videoSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": latestVideo.title,
+  "description": latestVideo.title,
+  "thumbnailUrl": latestVideo.thumbnail,
+  "uploadDate": latestVideo.publishDate,
+  "embedUrl": `https://www.youtube.com/embed/${latestVideo.id}`,
+  "contentUrl": `https://www.youtube.com/watch?v=${latestVideo.id}`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "VillageFive",
+    "url": "https://villagefive.com"
+  }
+});
 ---
 
 <Base
-  title="VillageFive: Disaster Documentaries"
-  description="VillageFive is a YouTube channel focused on disaster documentaries. Forgotten disasters, survivor stories, and the events that changed history."
+  title="VillageFive | Forgotten Disasters, Survivor Stories & History"
+  description="VillageFive covers the disasters history forgot. Weekly documentaries on forgotten catastrophes, survivor stories, and the events that changed the world."
+  canonicalURL="https://villagefive.com/"
 >
+  <script type="application/ld+json" set:html={orgSchema} slot="head" />
+  <script type="application/ld+json" set:html={videoSchema} slot="head" />
+
   <!-- Hero -->
   <section class="hero-atmo corner-brackets">
     <div class="container">
