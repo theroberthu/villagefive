@@ -14,9 +14,9 @@ const recentVideos = videos.slice(1, 7);
   description="VillageFive is a YouTube channel focused on disaster documentaries. Forgotten disasters, survivor stories, and the events that changed history."
 >
   <!-- Hero -->
-  <section class="hero corner-brackets">
+  <section class="hero-atmo corner-brackets">
     <div class="container">
-      <div class="hero-eyebrow">Disaster Documentaries</div>
+      <div class="hero-eyebrow">The Stories History Left Behind</div>
       <h1 class="hero-title">VILLAGE<em>FIVE</em></h1>
       <p class="hero-sub">
         Forgotten disasters, survivor stories, and the catastrophic events that changed history. New documentaries every week.
@@ -37,14 +37,7 @@ const recentVideos = videos.slice(1, 7);
           Watch Latest
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Why These Stories Matter -->
-  <section class="section-wrap">
-    <div class="container">
-      <div class="why-matter">
-        <h2 class="why-matter-heading">Why These Stories Matter</h2>
+      <div class="hero-story">
         <p>
           Thousands of disasters have shaped the world we live in today. Earthquakes that leveled entire cities. Floods that killed hundreds of thousands. Explosions that wiped towns off the map. Most of them never made it into a textbook.
         </p>
@@ -118,26 +111,59 @@ const recentVideos = videos.slice(1, 7);
 </Base>
 
 <style>
-  .why-matter {
-    max-width: 700px;
+  /* ── Atmospheric Hero ───────────────────────────────────── */
+  .hero-atmo {
+    padding: var(--space-16) 0 var(--space-12);
+    position: relative;
+    overflow: hidden;
+    background:
+      /* Grid lines */
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(232,66,10,0.06) 39px,
+        rgba(232,66,10,0.06) 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 39px,
+        rgba(232,66,10,0.06) 39px,
+        rgba(232,66,10,0.06) 40px
+      ),
+      /* Ember glow center */
+      radial-gradient(
+        ellipse 60% 50% at 50% 40%,
+        rgba(232,66,10,0.15) 0%,
+        rgba(232,66,10,0.04) 50%,
+        transparent 80%
+      ),
+      /* Dark vignette */
+      radial-gradient(
+        ellipse 80% 70% at 50% 50%,
+        transparent 30%,
+        rgba(13,13,13,0.6) 100%
+      ),
+      var(--surface-base);
   }
 
-  .why-matter-heading {
-    font-family: var(--font-display);
-    font-size: var(--type-2xl);
-    letter-spacing: var(--ls-wide);
-    margin-bottom: var(--space-6);
+  .hero-story {
+    max-width: 600px;
+    margin-top: var(--space-10);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: var(--space-8);
   }
 
-  .why-matter p {
+  .hero-story p {
     font-family: var(--font-body);
-    font-size: var(--type-base);
+    font-size: var(--type-sm);
     color: var(--text-secondary);
     line-height: var(--lh-relaxed);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-4);
   }
 
-  .why-matter p:last-child {
+  .hero-story p:last-child {
     margin-bottom: 0;
   }
 
