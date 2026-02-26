@@ -3,7 +3,7 @@ title: "5 Forgotten Disasters Nobody Talks About"
 description: "Five catastrophic disasters that killed thousands. The Peshtigo Fire, Halifax Explosion, Lake Nyos, Bhopal, and the Banqiao Dam. You've probably never heard of any of them."
 publishDate: 2025-02-22
 tags: ["forgotten disasters", "top 5", "historical"]
-youtubeVideoId: "dQw4w9WgXcQ"
+youtubeVideoId: "Cbq9J5jI-z4"
 featuredImage: "/images/blog/forgotten-disasters.jpg"
 ---
 
