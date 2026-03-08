@@ -65,6 +65,17 @@ const jsonLd = {
   },
   keywords: tags.join(', '),
 };
+
+const videoJsonLd = youtubeVideoId ? {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: title,
+  description: description,
+  thumbnailUrl: `https://i.ytimg.com/vi/${youtubeVideoId}/maxresdefault.jpg`,
+  uploadDate: isoDate,
+  contentUrl: `https://www.youtube.com/watch?v=${youtubeVideoId}`,
+  embedUrl: `https://www.youtube.com/embed/${youtubeVideoId}`,
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -93,6 +104,9 @@ const jsonLd = {
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  {videoJsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(videoJsonLd)} />
+  )}
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
