@@ -1,10 +1,10 @@
 ---
-title: "The Glacier That Collapsed Without Warning | Nepal 2026"
-description: "In August 2026, a massive section of glacier near Langtang Lirung in Nepal collapsed without warning, sending ice and debris through a valley that had only recently recovered from the 2015 earthquake. Dozens are feared dead."
+title: "Nepal Glacier Collapse: The 100 MPH Disaster Explained"
+description: "On August 26, 2026, a glacier near Langtang Lirung collapsed, sending a 100 MPH avalanche of ice and rock into Nepal's Lhende Khola valley. The debris flow tore through communities along the Nepal-China border with almost no warning."
 publishDate: 2026-08-29
 tags: ["glacier collapse", "nepal", "langtang", "climate disaster", "2026"]
-youtubeVideoId: "nepal-glacier-collapse"
-featuredImage: "https://img.youtube.com/vi/nepal-glacier-collapse/maxresdefault.jpg"
+youtubeVideoId: "vS1SgzqWf4o"
+featuredImage: "https://img.youtube.com/vi/vS1SgzqWf4o/maxresdefault.jpg"
 ---
 
 In August 2026, a massive section of glacier broke away from the slopes near Langtang Lirung in central Nepal. Without any warning, thousands of tons of ice, rock, and meltwater tore through the valley below. Villages that had been painstakingly rebuilt after the devastating 2015 earthquake were hit again.
