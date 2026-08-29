@@ -25,14 +25,50 @@ const links = [
           </li>
         ))}
       </ul>
-      <a
-        class="btn btn-primary btn-sm"
-        href="https://www.youtube.com/@villagefive?sub_confirmation=1"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Subscribe
-      </a>
+      <div class="nav-actions">
+        <a
+          class="btn btn-primary btn-sm nav-subscribe"
+          href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Subscribe
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
     </div>
   </div>
+  <!-- Mobile dropdown -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      {links.map(link => (
+        <li>
+          <a
+            class={`mobile-menu-link${currentPath === link.href ? ' active' : ''}`}
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
 </nav>
+
+<script is:inline>
+  (function() {
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobile-menu');
+    if (!hamburger || !mobileMenu) return;
+
+    hamburger.addEventListener('click', function() {
+      var isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+  })();
+</script>
