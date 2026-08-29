@@ -15,10 +15,16 @@ const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
   month: 'short',
   day: 'numeric',
 });
+
+const pubDate = new Date(publishDate);
+const now = new Date();
+const msPerDay = 1000 * 60 * 60 * 24;
+const isNew = (now.getTime() - pubDate.getTime()) / msPerDay <= 7;
 ---
 
 <a href={videoUrl} target="_blank" rel="noopener noreferrer" class="video-card card">
   <div class="video-card-thumb">
+    {isNew && <span class="badge-new">New</span>}
     <img class="video-card-thumb-img" src={thumbSrc} alt={title} loading="lazy" />
     <div class="play-overlay"><div class="play-icon"></div></div>
   </div>
