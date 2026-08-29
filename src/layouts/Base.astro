@@ -7,6 +7,7 @@ interface Props {
   title: string;
   description: string;
   ogImage?: string;
+  ogType?: string;
   canonicalURL?: string;
 }
 
@@ -16,6 +17,7 @@ const {
   title,
   description,
   ogImage = `${siteBase}/images/villagefive_og_v3.png`,
+  ogType = 'website',
   canonicalURL = `${siteBase}${Astro.url.pathname}`,
 } = Astro.props;
 ---
@@ -34,7 +36,7 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />

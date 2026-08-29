@@ -16,6 +16,29 @@ const { Content } = await render(post);
 const words = (post.body || '').split(/\s+/).length;
 const readTime = Math.max(1, Math.ceil(words / 230));
 const slug = post.id.replace(/\.md$/, '');
+
+// Find related posts by matching tags
+const allPosts = await getCollection('blog');
+const currentTags = post.data.tags || [];
+
+const relatedPosts = allPosts
+  .filter(p => p.id !== post.id)
+  .map(p => {
+    const pTags = p.data.tags || [];
+    const overlap = currentTags.filter((t: string) => pTags.includes(t)).length;
+    return { post: p, overlap };
+  })
+  .sort((a, b) => {
+    // Sort by tag overlap first, then by date
+    if (b.overlap !== a.overlap) return b.overlap - a.overlap;
+    return new Date(b.post.data.publishDate).getTime() - new Date(a.post.data.publishDate).getTime();
+  })
+  .slice(0, 4)
+  .map(({ post: p }) => ({
+    title: p.data.title,
+    slug: p.id.replace(/\.md$/, ''),
+    publishDate: p.data.publishDate,
+  }));
 ---
 
 <BlogPost
@@ -27,6 +50,7 @@ const slug = post.id.replace(/\.md$/, '');
   featuredImage={post.data.featuredImage}
   slug={slug}
   readTime={readTime}
+  relatedPosts={relatedPosts}
 >
   <Content />
 </BlogPost>

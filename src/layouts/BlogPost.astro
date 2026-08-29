@@ -1,10 +1,14 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Base from './Base.astro';
 import YouTubeEmbed from '../components/YouTubeEmbed.astro';
 import AdSlot from '../components/AdSlot.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
-import '../styles/global.css';
+
+interface RelatedPost {
+  title: string;
+  slug: string;
+  publishDate: Date;
+}
 
 interface Props {
   title: string;
@@ -15,7 +19,10 @@ interface Props {
   featuredImage?: string;
   slug: string;
   readTime: number;
+  relatedPosts?: RelatedPost[];
 }
+
+const siteBase = 'https://villagefive.com';
 
 const {
   title,
@@ -26,6 +33,7 @@ const {
   featuredImage,
   slug,
   readTime,
+  relatedPosts = [],
 } = Astro.props;
 
 const formattedDate = publishDate.toLocaleDateString('en-US', {
@@ -35,15 +43,17 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
 });
 
 const isoDate = publishDate.toISOString();
-const canonicalURL = new URL(`/blog/${slug}/`, Astro.site).href;
-const ogImage = featuredImage || '/images/og-default.jpg';
+const canonicalURL = `${siteBase}/blog/${slug}/`;
+const ogImage = featuredImage
+  ? (featuredImage.startsWith('http') ? featuredImage : `${siteBase}${featuredImage}`)
+  : `${siteBase}/images/villagefive_og_v3.png`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description: description,
-  image: ogImage.startsWith('/') ? new URL(ogImage, Astro.site).href : ogImage,
+  image: ogImage,
   datePublished: isoDate,
   dateModified: isoDate,
   author: {
@@ -56,7 +66,7 @@ const jsonLd = {
     name: 'VillageFive',
     logo: {
       '@type': 'ImageObject',
-      url: new URL('/images/og-default.jpg', Astro.site).href,
+      url: `${siteBase}/images/villagefive_og_v3.png`,
     },
   },
   mainEntityOfPage: {
@@ -78,112 +88,105 @@ const videoJsonLd = youtubeVideoId ? {
 } : null;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | VillageFive</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={canonicalURL} />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content={`${title} | VillageFive`} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:url" content={canonicalURL} />
-  <meta property="og:type" content="article" />
-  <meta property="article:published_time" content={isoDate} />
-  {tags.map(tag => <meta property="article:tag" content={tag} />)}
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={`${title} | VillageFive`} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<Base
+  title={`${title} | VillageFive`}
+  description={description}
+  ogImage={ogImage}
+  ogType="article"
+  canonicalURL={canonicalURL}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
   {videoJsonLd && (
-    <script type="application/ld+json" set:html={JSON.stringify(videoJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(videoJsonLd)} slot="head" />
   )}
+  <meta property="article:published_time" content={isoDate} slot="head" />
+  {tags.map(tag => <meta property="article:tag" content={tag} slot="head" />)}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/favicon_v2.ico" />
-  <link rel="apple-touch-icon" href="/images/favicon_v2_512.png" />
-</head>
-<body>
-  <Header />
-  <main>
-    <article class="blog-post">
-      <div class="container">
-        <div class="blog-post-layout">
-          <!-- Main content -->
-          <div class="blog-post-content">
-            <header class="blog-post-header">
-              {tags.length > 0 && (
-                <div class="blog-post-tags">
-                  {tags.map(tag => (
-                    <span class="badge badge-sm badge-ember">{tag}</span>
-                  ))}
-                </div>
-              )}
-              <h1 class="blog-post-title">{title}</h1>
-              <div class="blog-post-meta">
-                <time datetime={isoDate}>{formattedDate}</time>
-                <span class="blog-post-meta-sep">&middot;</span>
-                <span>{readTime} min read</span>
-              </div>
-            </header>
-
-            {youtubeVideoId && (
-              <div class="blog-post-video">
-                <YouTubeEmbed videoId={youtubeVideoId} title={title} />
+  <article class="blog-post">
+    <div class="container">
+      <div class="blog-post-layout">
+        <!-- Main content -->
+        <div class="blog-post-content">
+          <header class="blog-post-header">
+            {tags.length > 0 && (
+              <div class="blog-post-tags">
+                {tags.map(tag => (
+                  <span class="badge badge-sm badge-ember">{tag}</span>
+                ))}
               </div>
             )}
-
-            <div class="blog-post-body prose">
-              <slot />
+            <h1 class="blog-post-title">{title}</h1>
+            <div class="blog-post-meta">
+              <time datetime={isoDate}>{formattedDate}</time>
+              <span class="blog-post-meta-sep">&middot;</span>
+              <span>{readTime} min read</span>
             </div>
+          </header>
 
-            <AdSlot type="ad" label="Ad Placement" />
-
-            <!-- Newsletter CTA -->
-            <div class="blog-post-newsletter">
-              <NewsletterForm />
+          {youtubeVideoId && (
+            <div class="blog-post-video">
+              <YouTubeEmbed videoId={youtubeVideoId} title={title} />
             </div>
+          )}
+
+          <div class="blog-post-body prose">
+            <slot />
           </div>
 
-          <!-- Sidebar -->
-          <aside class="blog-post-sidebar">
-            <div class="sidebar-sticky">
-              <div class="sidebar-subscribe">
-                <div class="sidebar-subscribe-title">Never Miss a Story</div>
-                <p class="sidebar-subscribe-desc">New disaster documentaries every week.</p>
-                <a
-                  class="btn btn-primary btn-md"
-                  href="https://www.youtube.com/@villagefive?sub_confirmation=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style="width: 100%;"
-                >
-                  Subscribe on YouTube
-                </a>
+          <AdSlot type="ad" label="Ad Placement" />
+
+          <!-- Newsletter CTA -->
+          <div class="blog-post-newsletter">
+            <NewsletterForm />
+          </div>
+
+          <!-- Related Articles -->
+          {relatedPosts.length > 0 && (
+            <div class="related-articles">
+              <h2 class="related-articles-title">More Stories</h2>
+              <div class="related-articles-grid">
+                {relatedPosts.map(post => (
+                  <a href={`/blog/${post.slug}/`} class="related-article-card card">
+                    <div class="related-article-body">
+                      <div class="related-article-title">{post.title}</div>
+                      <div class="related-article-meta">
+                        {post.publishDate.toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </div>
+                    </div>
+                  </a>
+                ))}
               </div>
             </div>
-          </aside>
+          )}
         </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-post-sidebar">
+          <div class="sidebar-sticky">
+            <div class="sidebar-subscribe">
+              <div class="sidebar-subscribe-title">Never Miss a Story</div>
+              <p class="sidebar-subscribe-desc">New disaster documentaries every week.</p>
+              <a
+                class="btn btn-primary btn-md"
+                href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="width: 100%;"
+              >
+                Subscribe on YouTube
+              </a>
+            </div>
+            <AdSlot type="affiliate" label="Affiliate Placement" />
+          </div>
+        </aside>
       </div>
-    </article>
-  </main>
-  <Footer />
-</body>
-</html>
+    </div>
+  </article>
+</Base>
 
 <style>
   .sidebar-subscribe {
@@ -208,5 +211,56 @@ const videoJsonLd = youtubeVideoId ? {
     color: var(--text-secondary);
     line-height: var(--lh-relaxed);
     margin-bottom: var(--space-4);
+  }
+
+  /* ── Related Articles ───────────────────────────────────────── */
+  .related-articles {
+    margin-top: var(--space-12);
+    padding-top: var(--space-10);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .related-articles-title {
+    font-family: var(--font-display);
+    font-size: var(--type-xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-6);
+  }
+
+  .related-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .related-article-card {
+    display: block;
+    text-decoration: none;
+  }
+
+  .related-article-body {
+    padding: var(--space-5);
+  }
+
+  .related-article-title {
+    font-family: var(--font-condensed);
+    font-size: var(--type-md);
+    font-weight: 700;
+    line-height: var(--lh-snug);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .related-article-meta {
+    font-family: var(--font-condensed);
+    font-size: var(--type-xs);
+    color: var(--text-tertiary);
+    letter-spacing: var(--ls-wide);
+  }
+
+  @media (max-width: 768px) {
+    .related-articles-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
