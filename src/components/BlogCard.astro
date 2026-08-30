@@ -21,7 +21,7 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
 <a href={`/blog/${slug}/`} class="blog-card card">
   {featuredImage && (
     <div class="blog-card-image">
-      <img src={featuredImage} alt={title} loading="lazy" />
+      <img src={featuredImage} alt={title} loading="lazy" width="640" height="360" />
     </div>
   )}
   <div class="blog-card-body">

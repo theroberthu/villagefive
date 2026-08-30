@@ -1,11 +1,31 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const aboutSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About VillageFive",
+  "description": "VillageFive is a YouTube channel covering the disasters history forgot. Weekly documentaries on forgotten catastrophes, real survivor accounts, and the warnings we keep ignoring.",
+  "url": "https://villagefive.com/about/",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "VillageFive",
+    "url": "https://villagefive.com",
+    "sameAs": [
+      "https://www.youtube.com/@villagefive",
+      "https://www.instagram.com/villagefive",
+      "https://x.com/theroberthu",
+      "https://www.tiktok.com/@village.five"
+    ]
+  }
+});
 ---
 
 <Base
   title="About VillageFive | Forgotten Disaster Documentaries"
   description="VillageFive is a YouTube channel covering the disasters history forgot. Weekly documentaries on forgotten catastrophes, real survivor accounts, and the warnings we keep ignoring."
 >
+  <script type="application/ld+json" set:html={aboutSchema} slot="head" />
   <!-- Hero -->
   <section class="hero corner-brackets">
     <div class="container">
