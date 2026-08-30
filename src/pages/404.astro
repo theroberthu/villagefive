@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Page Not Found | VillageFive"
+  description="The page you're looking for doesn't exist. Head back to VillageFive for forgotten disaster stories and documentaries."
+>
+  <section class="not-found">
+    <div class="container">
+      <div class="not-found-content">
+        <div class="not-found-code">404</div>
+        <h1 class="not-found-title">PAGE NOT FOUND</h1>
+        <p class="not-found-desc">
+          This page doesn't exist. It may have been moved, or the URL might be wrong.
+        </p>
+        <div class="not-found-actions">
+          <a class="btn btn-primary btn-lg" href="/">Go Home</a>
+          <a class="btn btn-secondary btn-lg" href="/blog">Read the Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .not-found {
+    padding: var(--space-20) 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .not-found-content {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .not-found-code {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 15vw, 160px);
+    color: var(--ember-400);
+    line-height: 1;
+    letter-spacing: var(--ls-wide);
+    opacity: 0.8;
+    margin-bottom: var(--space-2);
+  }
+
+  .not-found-title {
+    font-family: var(--font-display);
+    font-size: var(--type-2xl);
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-4);
+  }
+
+  .not-found-desc {
+    font-size: var(--type-md);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-8);
+  }
+
+  .not-found-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

@@ -76,6 +76,31 @@ const jsonLd = {
   keywords: tags.join(', '),
 };
 
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteBase,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${siteBase}/blog/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: title,
+      item: canonicalURL,
+    },
+  ],
+};
+
 const videoJsonLd = youtubeVideoId ? {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
@@ -96,6 +121,7 @@ const videoJsonLd = youtubeVideoId ? {
   canonicalURL={canonicalURL}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} slot="head" />
   {videoJsonLd && (
     <script type="application/ld+json" set:html={JSON.stringify(videoJsonLd)} slot="head" />
   )}
