@@ -3,8 +3,8 @@ title: "Columbia Disaster: The Damage Hidden During Launch"
 description: "Sixteen minutes before landing, Space Shuttle Columbia stopped responding to Mission Control. The fatal chain began 16 days earlier, when foam from the external tank struck the orbiter's left wing during ascent. This is what NASA knew, what they missed, and why the crew never had a chance."
 publishDate: 2026-09-17
 tags: ["NASA", "space shuttle", "Columbia", "engineering failure", "investigation"]
-youtubeVideoId: "llc7KTvFZJQ"
-featuredImage: "https://img.youtube.com/vi/llc7KTvFZJQ/maxresdefault.jpg"
+youtubeVideoId: "lIc7KTvFZJQ"
+featuredImage: "https://img.youtube.com/vi/lIc7KTvFZJQ/maxresdefault.jpg"
 ---
 
 On January 16, 2003, Space Shuttle Columbia launched from Kennedy Space Center on mission STS-107. Eighty-two seconds after liftoff, a piece of insulating foam broke free from the external tank's bipod ramp and struck the leading edge of the orbiter's left wing at roughly 545 miles per hour.
