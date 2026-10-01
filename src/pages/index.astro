@@ -72,6 +72,17 @@ const videoSchema = JSON.stringify({
               Watch Latest
             </a>
           </div>
+          <div class="hero-story">
+            <p>
+              Thousands of disasters have shaped the world we live in today. Earthquakes that leveled entire cities. Floods that killed hundreds of thousands. Explosions that wiped towns off the map. Most of them never made it into a textbook.
+            </p>
+            <p>
+              VillageFive covers the disasters that history forgot: the ones too devastating to ignore, but somehow overlooked. Every week, a new documentary brings one of these stories back to light through research, real accounts, and the details that got buried over time.
+            </p>
+            <p>
+              From the 1889 Johnstown Flood to the 2026 Ice Storm, these aren't just tragedies. They're warnings.
+            </p>
+          </div>
         </div>
         <div class="hero-featured">
           <a
@@ -97,17 +108,6 @@ const videoSchema = JSON.stringify({
             <div class="hero-featured-title">{latestVideo.title}</div>
           </a>
         </div>
-      </div>
-      <div class="hero-story">
-        <p>
-          Thousands of disasters have shaped the world we live in today. Earthquakes that leveled entire cities. Floods that killed hundreds of thousands. Explosions that wiped towns off the map. Most of them never made it into a textbook.
-        </p>
-        <p>
-          VillageFive covers the disasters that history forgot: the ones too devastating to ignore, but somehow overlooked. Every week, a new documentary brings one of these stories back to light through research, real accounts, and the details that got buried over time.
-        </p>
-        <p>
-          From the 1889 Johnstown Flood to the 2026 Ice Storm, these aren't just tragedies. They're warnings.
-        </p>
       </div>
     </div>
   </section>
@@ -205,7 +205,7 @@ const videoSchema = JSON.stringify({
 
   @media (min-width: 768px) {
     .hero-columns {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       gap: var(--space-10);
     }
   }
@@ -304,18 +304,17 @@ const videoSchema = JSON.stringify({
   }
 
   .hero-story {
-    max-width: 600px;
-    margin-top: var(--space-10);
+    margin-top: var(--space-6);
     border-top: 1px solid var(--border-subtle);
-    padding-top: var(--space-8);
+    padding-top: var(--space-5);
   }
 
   .hero-story p {
     font-family: var(--font-body);
-    font-size: var(--type-base);
-    color: var(--text-secondary);
+    font-size: var(--type-sm);
+    color: var(--text-tertiary);
     line-height: var(--lh-relaxed);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
   }
 
   .hero-story p:last-child {
