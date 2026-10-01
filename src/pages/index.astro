@@ -49,26 +49,54 @@ const videoSchema = JSON.stringify({
   <!-- Hero -->
   <section class="hero-atmo corner-brackets">
     <div class="container">
-      <div class="hero-eyebrow">The Stories History Left Behind</div>
-      <h1 class="hero-title">VILLAGE<em>FIVE</em></h1>
-      <p class="hero-sub">
-        Forgotten disasters, survivor stories, and the catastrophic events that changed history. New documentaries every week.
-      </p>
-      <div class="hero-actions">
-        <a
-          class="btn btn-primary btn-xl"
-          href="https://www.youtube.com/@villagefive?sub_confirmation=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Subscribe on YouTube
-        </a>
-        <a
-          class="btn btn-secondary btn-xl"
-          href="#latest-video"
-        >
-          Watch Latest
-        </a>
+      <div class="hero-columns">
+        <div class="hero-text">
+          <div class="hero-eyebrow">The Stories History Left Behind</div>
+          <h1 class="hero-title">VILLAGE<em>FIVE</em></h1>
+          <p class="hero-sub">
+            Forgotten disasters, survivor stories, and the catastrophic events that changed history. New documentaries every week.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary btn-xl"
+              href="https://www.youtube.com/@villagefive?sub_confirmation=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Subscribe on YouTube
+            </a>
+            <a
+              class="btn btn-secondary btn-xl"
+              href="#latest-video"
+            >
+              Watch Latest
+            </a>
+          </div>
+        </div>
+        <div class="hero-featured">
+          <a
+            class="hero-featured-link"
+            href={`https://www.youtube.com/watch?v=${latestVideo.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={latestVideo.thumbnail}
+              alt={latestVideo.title}
+              width="640"
+              height="360"
+              class="hero-featured-img"
+              loading="eager"
+            />
+            <div class="hero-featured-overlay">
+              <svg class="hero-play-icon" viewBox="0 0 68 48" width="68" height="48">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="rgba(232,66,10,0.9)"/>
+                <path d="M45 24L27 14v20" fill="#fff"/>
+              </svg>
+            </div>
+            <div class="hero-featured-title">{latestVideo.title}</div>
+          </a>
+        </div>
       </div>
       <div class="hero-story">
         <p>
@@ -168,6 +196,77 @@ const videoSchema = JSON.stringify({
 
 <style>
   /* ── Atmospheric Hero ───────────────────────────────────── */
+  .hero-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-columns {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+    }
+  }
+
+  .hero-featured {
+    position: relative;
+  }
+
+  .hero-featured-link {
+    display: block;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(232,66,10,0.15);
+    transition: transform var(--ease-out) 0.3s, box-shadow var(--ease-out) 0.3s;
+  }
+
+  .hero-featured-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 0 60px rgba(232,66,10,0.25);
+  }
+
+  .hero-featured-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-featured-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+  }
+
+  .hero-featured-link:hover .hero-featured-overlay {
+    opacity: 1;
+  }
+
+  .hero-play-icon {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  }
+
+  .hero-featured-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-6) var(--space-4) var(--space-3);
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    font-family: var(--font-condensed);
+    font-size: var(--type-base);
+    font-weight: 600;
+    color: var(--ash-000);
+    letter-spacing: var(--ls-normal);
+  }
+
   .hero-atmo {
     padding: var(--space-16) 0 var(--space-12);
     position: relative;
