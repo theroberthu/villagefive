@@ -5,6 +5,19 @@ publishDate: 2026-08-29
 tags: ["engineering failures", "top 5", "preventable disasters"]
 youtubeVideoId: "huevbu4DWGk"
 featuredImage: "https://img.youtube.com/vi/huevbu4DWGk/maxresdefault.jpg"
+keyFacts:
+  - "The Mars Climate Orbiter was destroyed by a unit conversion error between imperial and metric, costing NASA $327.6 million."
+  - "The Hyatt Regency walkway collapse killed 114 people and remains the deadliest structural collapse in U.S. history outside of deliberate attacks."
+  - "The Teton Dam failed on June 5, 1976, releasing 80 billion gallons of water and killing 11 people."
+  - "The Kansas City Hyatt disaster was caused by a design change that doubled the load on a single connection point."
+  - "Every disaster on this list started with a fixable problem that was documented before the failure occurred."
+faq:
+  - question: "What caused the Mars Climate Orbiter to crash?"
+    answer: "The Mars Climate Orbiter was destroyed because Lockheed Martin used imperial units (pound-force seconds) while NASA's Jet Propulsion Laboratory expected metric units (newton-seconds). The mismatch was never caught during integration testing, causing the spacecraft to enter Mars's atmosphere at too low an altitude."
+  - question: "What engineering mistake caused the Hyatt Regency collapse?"
+    answer: "During construction, the original design of continuous steel rods was changed to two shorter rods, which meant the upper walkway bore the weight of both walkways instead of each hanging independently. This doubled the load on the upper connection, which failed during a crowded event."
+  - question: "Could these engineering disasters have been prevented?"
+    answer: "Yes. Every disaster on this list involved warning signs that were documented before the failure occurred. The fixes ranged from a simple unit conversion check to following existing engineering standards. In each case, the information needed to prevent the disaster was available but was not acted on."
 ---
 
 Every disaster on this list started with something small. A wrong unit. A design change no one double-checked. A number on a spreadsheet that was too low. These were not freak accidents. They were failures that someone, at some point, had the information to prevent.

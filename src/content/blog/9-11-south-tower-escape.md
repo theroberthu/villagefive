@@ -5,6 +5,19 @@ publishDate: 2026-09-11
 tags: ["9/11", "world trade center", "survival", "building safety", "engineering"]
 youtubeVideoId: "_EiyfefpSec"
 featuredImage: "https://img.youtube.com/vi/_EiyfefpSec/maxresdefault.jpg"
+keyFacts:
+  - "Eighteen people escaped from above the impact zone of the World Trade Center South Tower on September 11, 2001."
+  - "Stairwell A, in the northwest corner of the building's core, was the only stairwell that remained passable through the crash zone."
+  - "Flight 175 struck between the 77th and 85th floors, severing stairwells B and C but leaving Stairwell A marginally intact."
+  - "The survivors had only 56 minutes between the impact at 9:03 a.m. and the tower's collapse at 9:59 a.m."
+  - "Brian Clark, a fire warden on the 84th floor, rescued Stanley Praimnath from behind debris before both descended to safety."
+faq:
+  - question: "How many people escaped from above the impact zone in the South Tower on 9/11?"
+    answer: "Eighteen people escaped from above the impact zone of the World Trade Center South Tower. They descended through Stairwell A, the only stairwell that remained passable through the crash zone after Flight 175 struck between the 77th and 85th floors."
+  - question: "Why did only one stairwell survive the 9/11 South Tower impact?"
+    answer: "All three stairwells (A, B, and C) ran through the building's central core relatively close together. Flight 175 came in from the south at an angle, destroying stairwells B and C in the southeast portion of the core. Stairwell A survived because it sat in the northwest corner, the farthest point from the plane's path."
+  - question: "How much time did survivors have to escape the South Tower?"
+    answer: "Survivors had approximately 56 minutes between the impact at 9:03 a.m. and the tower's collapse at 9:59 a.m. Those who escaped had to navigate damaged stairwells filled with debris, cracked walls, and smoke while making split-second decisions about which route to take."
 ---
 
 At 9:03 a.m. on September 11, 2001, United Airlines Flight 175 struck the South Tower of the World Trade Center between the 77th and 85th floors. The impact killed hundreds instantly. It severed two of the tower's three stairwells through the crash zone, trapping everyone above with no obvious way down.

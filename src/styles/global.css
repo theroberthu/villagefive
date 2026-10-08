@@ -923,6 +923,48 @@ ul, ol { list-style: none; }
   margin: var(--space-12) 0;
 }
 
+/* Key Facts — GEO-optimized fact block */
+.key-facts {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.key-facts-title {
+  font-family: var(--font-display);
+  font-size: var(--type-lg);
+  letter-spacing: var(--ls-wide);
+  color: var(--ember-400);
+  margin-bottom: var(--space-3);
+}
+.key-facts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.key-facts-list li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-2);
+  font-size: var(--type-base);
+  line-height: var(--lh-relaxed);
+  color: var(--text-primary);
+}
+.key-facts-list li:last-child {
+  margin-bottom: 0;
+}
+.key-facts-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: var(--ember-400);
+  border-radius: var(--radius-full);
+}
+
 /* Article summary — GEO-optimized intro block */
 .article-summary {
   background: var(--surface-raised);

@@ -5,6 +5,19 @@ publishDate: 2026-08-29
 tags: ["glacier collapse", "nepal", "langtang", "climate disaster", "2026"]
 youtubeVideoId: "vS1SgzqWf4o"
 featuredImage: "https://img.youtube.com/vi/vS1SgzqWf4o/maxresdefault.jpg"
+keyFacts:
+  - "In August 2026, a glacier near Langtang Lirung (7,227 meters) collapsed, sending debris through the valley at roughly 100 mph."
+  - "The Langtang Valley had already been devastated by a 2015 earthquake that killed over 300 people."
+  - "Villages rebuilt after the 2015 disaster were hit again, with dozens feared dead."
+  - "Rising Himalayan temperatures have accelerated glacial melt, increasing the frequency and severity of collapses."
+  - "Rescue teams struggled to reach the remote area because roads were buried under meters of debris."
+faq:
+  - question: "What caused the 2026 Nepal glacier collapse?"
+    answer: "A large section of hanging glacier on Langtang Lirung, a 7,227-meter peak in central Nepal, detached from the mountainside. The glacier had been weakened by rising temperatures and sustained meltwater infiltration. The falling ice mass picked up rock and debris, forming a rapid flow that traveled several kilometers into inhabited areas."
+  - question: "Is climate change causing more glacier collapses in Nepal?"
+    answer: "Scientists have documented that rising temperatures in the Himalayas are accelerating glacial melt and increasing the frequency of glacial lake outburst floods and ice avalanches. Glaciers that were stable for centuries are retreating, and the meltwater creates instability in hanging ice formations, making sudden collapses more likely."
+  - question: "Was the Langtang Valley hit by a disaster before 2026?"
+    answer: "Yes. In April 2015, a catastrophic earthquake triggered an avalanche that buried the village of Langtang under ice and rock, killing over 300 people including residents, trekkers, and guides. The village was completely destroyed. Survivors spent years rebuilding before the 2026 glacier collapse struck the valley again."
 ---
 
 In August 2026, a massive section of glacier broke away from the slopes near Langtang Lirung in central Nepal. Without any warning, thousands of tons of ice, rock, and meltwater tore through the valley below. Villages that had been painstakingly rebuilt after the devastating 2015 earthquake were hit again.

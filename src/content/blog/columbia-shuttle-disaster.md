@@ -5,6 +5,19 @@ publishDate: 2026-09-17
 tags: ["NASA", "space shuttle", "Columbia", "engineering failure", "investigation"]
 youtubeVideoId: "lIc7KTvFZJQ"
 featuredImage: "https://img.youtube.com/vi/lIc7KTvFZJQ/maxresdefault.jpg"
+keyFacts:
+  - "A 1.67-pound piece of foam struck Columbia's left wing at 545 mph during launch on January 16, 2003."
+  - "NASA had documented foam strikes on virtually every shuttle mission since 1981 but classified them as acceptable."
+  - "Engineers requested satellite imagery of the wing during the mission, but the request was not pursued by management."
+  - "During reentry on February 1, 2003, superheated plasma entered the wing breach and destroyed the orbiter, killing all seven crew members."
+  - "The Columbia Accident Investigation Board found that NASA's organizational culture was as much a cause as the physical foam strike."
+faq:
+  - question: "What caused the Space Shuttle Columbia disaster?"
+    answer: "During launch on January 16, 2003, a 1.67-pound piece of insulating foam broke from the external tank and struck the leading edge of the orbiter's left wing at roughly 545 mph. The impact created a hole in the reinforced carbon-carbon panels. During reentry 16 days later, superheated plasma entered through the breach and destroyed the wing from inside."
+  - question: "Did NASA know about the foam strike before Columbia re-entered?"
+    answer: "Yes. NASA identified the foam strike from launch footage within days. Engineers raised concerns and requested satellite imagery to assess the damage, but the request was not pursued by management. NASA's Debris Assessment Team used a mathematical model called Crater to estimate the damage, but the model was being used outside its validated range."
+  - question: "Could the Columbia crew have been saved?"
+    answer: "The Columbia Accident Investigation Board concluded that if the damage had been confirmed during the mission, NASA could have potentially mounted a rescue using Space Shuttle Atlantis, which was being prepared for a March launch. The crew also could have attempted repairs using materials aboard the station, though this would have been unprecedented."
 ---
 
 On January 16, 2003, Space Shuttle Columbia launched from Kennedy Space Center on mission STS-107. Eighty-two seconds after liftoff, a piece of insulating foam broke free from the external tank's bipod ramp and struck the leading edge of the orbiter's left wing at roughly 545 miles per hour.

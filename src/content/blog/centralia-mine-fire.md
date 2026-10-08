@@ -5,6 +5,19 @@ publishDate: 2026-03-11
 tags: ["mine fire", "abandoned town", "pennsylvania", "ongoing disaster"]
 youtubeVideoId: "84j6BkdcddQ"
 featuredImage: "https://img.youtube.com/vi/84j6BkdcddQ/maxresdefault.jpg"
+keyFacts:
+  - "The Centralia mine fire started in 1962 and is still burning over 60 years later."
+  - "Congress allocated $42 million in 1984 to relocate Centralia's residents."
+  - "The town's population dropped from over 1,000 to fewer than five residents."
+  - "In 1981, 12-year-old Todd Domboski fell into a sinkhole filled with lethal carbon monoxide in his grandmother's backyard."
+  - "Centralia's zip code was revoked in 2002 and the state claimed eminent domain over remaining properties in 2009."
+faq:
+  - question: "How did the Centralia mine fire start?"
+    answer: "The most widely accepted explanation is that in May 1962, the town council hired firefighters to clean up a landfill in an abandoned strip mine pit at the edge of town. The fire spread through an unsealed opening into the vast network of coal mines running beneath Centralia, where it has been burning ever since."
+  - question: "Is the Centralia mine fire still burning?"
+    answer: "Yes. The underground coal fire has been burning continuously since 1962, more than 60 years. Experts estimate there is enough coal in the mines to fuel the fire for another 250 years. Multiple attempts to extinguish it have failed because the fire is too deep, too spread out, and the mine network too complex."
+  - question: "Can you still visit Centralia, Pennsylvania?"
+    answer: "Centralia is not officially closed to visitors, though nearly all structures have been demolished. The most visited feature is a section of the abandoned Route 61 (Graffiti Highway), though Pennsylvania covered it with dirt in 2020. Smoke and steam still rise from cracks in the ground, and the area remains dangerous due to potential sinkholes and toxic gases."
 ---
 
 In 1962, a fire started in a coal mine beneath the small town of Centralia, Pennsylvania. That fire is still burning today.

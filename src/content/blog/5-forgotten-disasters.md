@@ -5,6 +5,19 @@ publishDate: 2025-02-22
 tags: ["forgotten disasters", "top 5", "historical"]
 youtubeVideoId: "Cbq9J5jI-z4"
 featuredImage: "https://img.youtube.com/vi/Cbq9J5jI-z4/maxresdefault.jpg"
+keyFacts:
+  - "The Peshtigo Fire of 1871 killed up to 2,500 people on the same night as the Great Chicago Fire, making it the deadliest wildfire in American history."
+  - "The Halifax Explosion of 1917 was the largest man-made blast in history until the atomic bomb, killing nearly 2,000 people."
+  - "Lake Nyos in Cameroon released a cloud of CO2 in 1986 that killed 1,746 people in their sleep within minutes."
+  - "The Bhopal gas leak in 1984 released methyl isocyanate over a sleeping city, killing thousands in a single night."
+  - "China's Banqiao Dam failure in 1975 killed an estimated 85,000 to 240,000 people, making it the deadliest dam collapse in history."
+faq:
+  - question: "What was the deadliest wildfire in American history?"
+    answer: "The Peshtigo Fire of October 8, 1871, killed an estimated 1,500 to 2,500 people in Wisconsin. It occurred on the same night as the Great Chicago Fire, which dominated media coverage and caused the Peshtigo disaster to be largely forgotten."
+  - question: "What caused the Lake Nyos disaster in Cameroon?"
+    answer: "On August 21, 1986, Lake Nyos, a volcanic crater lake in Cameroon, released a massive cloud of carbon dioxide that had accumulated in its deep waters. The CO2 cloud, heavier than air, flowed downhill into surrounding valleys and suffocated 1,746 people and thousands of livestock, mostly while they slept."
+  - question: "How many people died in the Banqiao Dam collapse?"
+    answer: "The Banqiao Dam in China's Henan Province failed during Typhoon Nina in August 1975. Estimates of the death toll range from 85,000 to 240,000 people, including those killed by the initial flood and the subsequent famine and disease. It remains the deadliest dam failure in recorded history."
 ---
 
 History remembers the Titanic. It remembers Pompeii. It remembers Chernobyl.
