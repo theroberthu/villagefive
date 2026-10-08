@@ -868,7 +868,6 @@ ul, ol { list-style: none; }
   font-size: var(--type-md);
   line-height: 1.8;
   color: var(--text-secondary);
-  max-width: 680px;
   margin-bottom: var(--space-10);
 }
 .prose h2 {
@@ -932,7 +931,6 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-md);
   padding: var(--space-6) var(--space-6);
   margin-bottom: var(--space-8);
-  max-width: 680px;
 }
 .article-summary p {
   font-size: var(--type-md);
