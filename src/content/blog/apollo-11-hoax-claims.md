@@ -5,6 +5,19 @@ publishDate: 2026-09-27
 tags: ["Apollo 11", "NASA", "moon landing", "conspiracy", "space"]
 youtubeVideoId: "PP66lasKrG4"
 featuredImage: "https://img.youtube.com/vi/PP66lasKrG4/maxresdefault.jpg"
+keyFacts:
+  - "The Apollo 11 flag had a horizontal crossbar along the top edge to keep it extended in the vacuum, which is why it appears rigid."
+  - "No stars appear in lunar photographs because camera exposure settings were calibrated for the brightly lit surface, not the dim stars."
+  - "Apollo astronauts passed through the Van Allen belts in about 30 minutes, receiving a radiation dose well within safe limits."
+  - "NASA confirmed it lost the original slow-scan television tapes of the Apollo 11 moonwalk, though broadcast copies survived."
+  - "382 kilograms of lunar rock returned by all Apollo missions have been independently verified by scientists worldwide."
+faq:
+  - question: "Why does the Apollo 11 flag appear to wave on the Moon?"
+    answer: "The flag was not hanging freely. NASA engineers designed a horizontal crossbar along the top edge called the Lunar Flag Assembly to keep the flag extended in the vacuum. The apparent waving was caused by the astronauts twisting the pole to plant it. In the vacuum, with no air resistance to dampen oscillations, the fabric kept moving after being disturbed. In the footage, the flag moves only when the astronauts touch the pole."
+  - question: "Why are there no stars in the Apollo moon photographs?"
+    answer: "The lunar surface in direct sunlight is extremely bright. Camera exposure settings were calibrated for these brightly lit subjects, just as a camera on Earth set for a sunlit scene will not capture stars. Stars are too dim relative to the sunlit landscape to register at those exposure levels. This is standard photographic behavior, not evidence of a studio backdrop."
+  - question: "Did Apollo astronauts survive the Van Allen radiation belts?"
+    answer: "Yes. NASA planned the trajectory to pass through the thinnest parts of the belts, and the transit took roughly 30 minutes each way. The total radiation dose received by Apollo astronauts for the entire mission was between 0.16 and 1.14 rads, well below dangerous levels. This is comparable to a few CT scans, according to NASA dosimetry records."
 ---
 
 The Apollo 11 flag appears to wave. The photographs show no stars. Shadows seem to point in different directions. The crew crossed the Van Allen radiation belts, and NASA really did lose the original slow-scan television telemetry tapes.

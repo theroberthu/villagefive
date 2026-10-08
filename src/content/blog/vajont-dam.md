@@ -5,6 +5,19 @@ publishDate: 2026-04-01
 tags: ["dam disaster", "italy", "landslide", "1963", "vajont"]
 youtubeVideoId: "y5Tnc8tQ26c"
 featuredImage: "https://img.youtube.com/vi/y5Tnc8tQ26c/maxresdefault.jpg"
+keyFacts:
+  - "On October 9, 1963, 260 million cubic meters of rock slid into the Vajont reservoir, creating a wave over 250 meters high."
+  - "Nearly 2,000 people in the valley below were killed in less than four minutes."
+  - "The Vajont Dam itself, at 262 meters tall, survived the disaster intact and still stands today."
+  - "Geologists had identified the risk of a major landslide into the reservoir as early as 1960."
+  - "Journalist Tina Merlin published warnings about the danger and was sued for spreading alarm, but acquitted."
+faq:
+  - question: "What happened at the Vajont Dam in 1963?"
+    answer: "On October 9, 1963, approximately 260 million cubic meters of rock from Monte Toc slid into the reservoir behind the Vajont Dam in northern Italy. The landslide displaced the water so violently that it sent a wave over 250 meters high over the dam and into the valley below, killing nearly 2,000 people in less than four minutes."
+  - question: "Did the Vajont Dam break?"
+    answer: "No. The Vajont Dam survived the disaster structurally intact and still stands today. The catastrophe was not caused by the dam failing, but by a massive landslide that displaced the reservoir water over the top of the dam. The problem was the unstable mountain next to the reservoir, not the dam itself."
+  - question: "Were there warnings before the Vajont Dam disaster?"
+    answer: "Yes. Geologists identified the risk of a large landslide as early as 1960. Instruments recorded the mountainside creeping, cracks opened in the ground, small landslides sent waves across the reservoir, and animals abandoned their grazing areas. Journalist Tina Merlin published warnings in her newspaper. Despite all these signs, the energy company SADE continued filling the reservoir."
 ---
 
 On the night of October 9, 1963, roughly 260 million cubic meters of rock broke loose from the side of Monte Toc and slid into the reservoir behind the Vajont Dam in northern Italy. The landslide displaced the water so violently that it sent a wave over 250 meters above the reservoir's surface. The wall of water cleared the top of the dam and crashed into the valley below.

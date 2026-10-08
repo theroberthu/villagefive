@@ -10,6 +10,11 @@ const blog = defineCollection({
     tags: z.array(z.string()).optional().default([]),
     youtubeVideoId: z.string().optional(),
     featuredImage: z.string().optional(),
+    keyFacts: z.array(z.string()).optional().default([]),
+    faq: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional().default([]),
   }),
 });
 

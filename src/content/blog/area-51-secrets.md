@@ -5,6 +5,19 @@ publishDate: 2026-10-01
 tags: ["Area 51", "CIA", "Cold War", "military", "aviation"]
 youtubeVideoId: "EGVdHVJo8rY"
 featuredImage: "https://img.youtube.com/vi/EGVdHVJo8rY/maxresdefault.jpg"
+keyFacts:
+  - "The CIA selected Groom Lake in 1955 to test the U-2 spy plane, nicknaming the site 'Paradise Ranch' to attract workers."
+  - "The U-2 flew above 60,000 feet, and civilian sightings of it at extreme altitude generated early UFO reports."
+  - "The A-12 OXCART could fly at Mach 3.2 and at 90,000 feet, making it the fastest manned aircraft ever built at the time."
+  - "The U.S. Air Force secretly tested captured Soviet MiG fighters at Area 51 under programs like HAVE DOUGHNUT."
+  - "The CIA did not officially acknowledge Area 51's existence until 2013, when declassified documents confirmed its role in U-2 development."
+faq:
+  - question: "What was really tested at Area 51?"
+    answer: "Area 51 was used to develop and test classified aircraft including the U-2 spy plane (1955), the A-12 OXCART (Mach 3.2 reconnaissance aircraft, 1962), and captured Soviet MiG fighters. The secrecy was driven by Cold War espionage concerns, not extraterrestrial activity. These programs are now declassified and documented in CIA and Air Force records."
+  - question: "Did Area 51 cause UFO sightings?"
+    answer: "Yes. The U-2 flew at altitudes above 60,000 feet, far higher than any known aircraft at the time. Airline pilots and civilians who spotted it reported unidentified flying objects at altitudes they believed impossible. The CIA later estimated that over half of all UFO reports in the late 1950s and 1960s were actually U-2 and OXCART sightings."
+  - question: "When did the U.S. government acknowledge Area 51?"
+    answer: "The CIA did not officially acknowledge Area 51's existence until 2013, when previously classified documents about the U-2 program were released through a Freedom of Information Act request. The documents confirmed the site's role in developing reconnaissance aircraft during the Cold War."
 ---
 
 Area 51 is the most famous military installation in the world, and for decades, the U.S. government refused to confirm it existed. That silence created a vacuum, and UFO stories filled it. But the classified programs that actually operated at Groom Lake were, in many ways, stranger than the conspiracy theories. They just had nothing to do with aliens.

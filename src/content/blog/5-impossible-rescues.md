@@ -5,6 +5,19 @@ publishDate: 2026-10-08
 tags: ["rescue", "survival", "Flight 1549", "Apollo 13", "Hurricane Harvey"]
 youtubeVideoId: "i7d3CtN9Ph4"
 featuredImage: "https://img.youtube.com/vi/i7d3CtN9Ph4/maxresdefault.jpg"
+keyFacts:
+  - "The U.S. Air Force 920th Rescue Wing recovered 11 people stranded 80 miles off Florida's coast by helicopter."
+  - "The Texas National Guard conducted hundreds of helicopter hoist rescues during Hurricane Harvey's catastrophic flooding in 2017."
+  - "14 of 16 crew members were rescued from the HMS Bounty in 30-foot seas during Hurricane Sandy in 2012."
+  - "All 155 people aboard US Airways Flight 1549 survived the Hudson River ditching on January 15, 2009, rescued in 24 minutes."
+  - "Apollo 13 astronauts survived 4 days in a disabled spacecraft 200,000 miles from Earth before splashing down safely on April 17, 1970."
+faq:
+  - question: "How were all 155 passengers saved from Flight 1549 on the Hudson River?"
+    answer: "After Captain Sullenberger ditched the Airbus A320 in the Hudson River on January 15, 2009, passengers evacuated onto the wings and inflatable slides. New York Waterway ferries were first on scene within minutes, followed by Coast Guard, NYPD, and FDNY boats. The rescue was completed in roughly 24 minutes in 36-degree water. There was no pre-existing rescue protocol for an airliner in the Hudson."
+  - question: "How did the Apollo 13 crew survive after the oxygen tank explosion?"
+    answer: "After an oxygen tank ruptured 200,000 miles from Earth, the crew transferred to the lunar module as a lifeboat. Engineers on the ground devised a fix for rising CO2 using cardboard, plastic bags, and tape. The crew rationed power, endured near-freezing temperatures, and limited water to 6 ounces per person per day. They used the lunar module's engine for trajectory burns and splashed down safely on April 17, 1970."
+  - question: "What happened to the HMS Bounty during Hurricane Sandy?"
+    answer: "The HMS Bounty, a 180-foot tall ship replica, sailed into the path of Hurricane Sandy in October 2012 and began taking on water 90 miles southeast of Cape Hatteras. The crew of 16 abandoned ship into 30-foot seas. Coast Guard rescue swimmers recovered 14 crew members. Two were lost: Claudene Christian was found unresponsive, and Captain Robin Walbridge was never found."
 ---
 
 Surviving a disaster is one thing. Getting out alive is another. Some rescues look routine on paper: a helicopter arrives, a boat pulls alongside, a crew reaches the survivors. But the footage tells a different story. Wind, water, fire, and time work against every step. The margin between rescue and loss is measured in minutes, sometimes seconds.

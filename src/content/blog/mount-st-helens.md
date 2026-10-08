@@ -5,6 +5,19 @@ publishDate: 2026-10-04
 tags: ["Mount St. Helens", "volcano", "eruption", "1980", "Washington"]
 youtubeVideoId: "wRNvZ_wClu4"
 featuredImage: "https://img.youtube.com/vi/wRNvZ_wClu4/maxresdefault.jpg"
+keyFacts:
+  - "On May 18, 1980, Mount St. Helens erupted with a lateral blast that traveled at over 300 mph, flattening 230 square miles of forest."
+  - "The eruption was triggered by a magnitude 5.1 earthquake that caused the largest landslide in recorded history."
+  - "The north face of the mountain had been bulging outward at 5 feet per day before the eruption."
+  - "57 people were killed, including USGS volcanologist David Johnston, who was monitoring the mountain 6 miles away."
+  - "The USGS had published a hazard assessment in 1978 predicting an eruption before the end of the century."
+faq:
+  - question: "What made the Mount St. Helens eruption unusual?"
+    answer: "Unlike conventional volcanic eruptions where material erupts vertically from the summit, Mount St. Helens produced a lateral blast. A magnitude 5.1 earthquake caused the bulging north face to collapse in a massive landslide, which uncorked the pressurized magma inside. The blast traveled sideways at over 300 mph, flattening everything within 230 square miles."
+  - question: "How many people died in the Mount St. Helens eruption?"
+    answer: "57 people were killed, including USGS volcanologist David Johnston, who was stationed at an observation post 6 miles from the summit. Harry Truman, the 83-year-old owner of Mount St. Helens Lodge, refused to evacuate and was buried under 150 feet of debris. Most victims were outside the restricted zone or had received permits to enter."
+  - question: "Were there warning signs before Mount St. Helens erupted?"
+    answer: "Yes. Earthquakes began in March 1980, and over 10,000 were recorded before the eruption. The north face developed a visible bulge expanding outward at 5 feet per day. Steam eruptions began on March 27. The USGS had even predicted an eruption in a 1978 hazard assessment. However, scientists expected a vertical eruption, not a lateral blast."
 ---
 
 Mount St. Helens had been quiet for 123 years when the earthquakes started in March 1980. Within weeks, the north face of the mountain was bulging outward at a rate of five feet per day. Scientists knew something was coming. They did not know it would come from the side.

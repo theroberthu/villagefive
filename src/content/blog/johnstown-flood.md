@@ -5,6 +5,19 @@ publishDate: 2026-03-04
 tags: ["flood", "dam failure", "historical", "pennsylvania"]
 youtubeVideoId: "Efied2JRTG4"
 featuredImage: "https://img.youtube.com/vi/Efied2JRTG4/maxresdefault.jpg"
+keyFacts:
+  - "The South Fork Dam failed on May 31, 1889, releasing 20 million tons of water that hit Johnstown at 40 miles per hour."
+  - "2,209 people were killed in roughly 10 minutes, making it one of the deadliest single-day disasters in U.S. history."
+  - "The dam was owned by the South Fork Fishing and Hunting Club, whose members included Andrew Carnegie and Henry Clay Frick."
+  - "Engineers had warned the club that the dam was dangerous, but every warning was ignored."
+  - "Clara Barton and the American Red Cross led one of the first major disaster relief efforts in U.S. history in response."
+faq:
+  - question: "What caused the Johnstown Flood of 1889?"
+    answer: "The South Fork Dam failed after heavy rains because the dam had been dangerously modified by the South Fork Fishing and Hunting Club. They lowered the dam's crest, removed discharge pipes, and put fish screens across the spillway that caught debris and reduced its capacity. When the lake rose, there was no way to relieve pressure."
+  - question: "How many people died in the Johnstown Flood?"
+    answer: "2,209 people were killed when 20 million tons of water struck the town at roughly 40 miles per hour. Over 1,600 homes were destroyed, and bodies were found as far away as Cincinnati. Some were never found at all."
+  - question: "Was anyone held responsible for the Johnstown Flood?"
+    answer: "Despite widespread public anger, no members of the South Fork Fishing and Hunting Club were ever held legally liable. Lawsuits were filed but failed in court. The club's members, including some of the wealthiest men in America, avoided personal accountability for the disaster."
 ---
 
 On May 31, 1889, the South Fork Dam in Pennsylvania failed. Twenty million tons of water roared down the Little Conemaugh River valley at 40 miles per hour, headed straight for the industrial town of Johnstown.
