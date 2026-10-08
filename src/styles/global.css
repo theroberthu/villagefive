@@ -865,62 +865,80 @@ ul, ol { list-style: none; }
 
 /* Prose — markdown body content */
 .prose {
-  font-size: var(--type-base);
-  line-height: var(--lh-relaxed);
+  font-size: var(--type-md);
+  line-height: 1.8;
   color: var(--text-secondary);
+  max-width: 680px;
   margin-bottom: var(--space-10);
 }
 .prose h2 {
   font-family: var(--font-display);
-  font-size: var(--type-xl);
+  font-size: var(--type-2xl);
   letter-spacing: var(--ls-wide);
   color: var(--text-primary);
-  margin-top: var(--space-12);
-  margin-bottom: var(--space-4);
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-5);
 }
 .prose h3 {
   font-family: var(--font-condensed);
-  font-size: var(--type-lg);
+  font-size: var(--type-xl);
   font-weight: 700;
   color: var(--text-primary);
-  margin-top: var(--space-8);
-  margin-bottom: var(--space-3);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
 }
 .prose p {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 .prose a {
   color: var(--ember-400);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
   transition: color var(--dur-fast);
 }
 .prose a:hover { color: var(--ember-300); }
 .prose strong { color: var(--text-primary); font-weight: 600; }
 .prose ul, .prose ol {
   padding-left: var(--space-6);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 .prose ul { list-style: disc; }
 .prose ol { list-style: decimal; }
 .prose li {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 .prose blockquote {
   border-left: 3px solid var(--ember-400);
-  padding-left: var(--space-5);
-  margin: var(--space-6) 0;
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
   color: var(--text-secondary);
   font-style: italic;
 }
 .prose img {
   border-radius: var(--radius-lg);
-  margin: var(--space-6) 0;
+  margin: var(--space-8) 0;
 }
 .prose hr {
   border: none;
   border-top: 1px solid var(--border-subtle);
-  margin: var(--space-10) 0;
+  margin: var(--space-12) 0;
+}
+
+/* Article summary — GEO-optimized intro block */
+.article-summary {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--ember-400);
+  border-radius: var(--radius-md);
+  padding: var(--space-6) var(--space-6);
+  margin-bottom: var(--space-8);
+  max-width: 680px;
+}
+.article-summary p {
+  font-size: var(--type-md);
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin: 0;
 }
 
 /* Sidebar */
